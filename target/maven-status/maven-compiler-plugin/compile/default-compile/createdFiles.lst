@@ -1,0 +1,6 @@
+com\packsendme\lib\bre\roadway\model\costs\MotorcycleCostsModel.class
+com\packsendme\lib\bre\roadway\model\costs\BicycleCostsModel.class
+com\packsendme\lib\bre\roadway\model\costs\CarCostsModel.class
+com\packsendme\lib\bre\roadway\model\RoadwayModel.class
+com\packsendme\lib\bre\roadway\model\costs\WalkingCostsModel.class
+com\packsendme\lib\bre\roadway\model\costs\TruckCostsModel.class
