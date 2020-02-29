@@ -1,6 +1,6 @@
 package com.packsendme.lib.bre.roadway.model.costs;
 
-public class WalkingCostsModel {
+public class WalkingCosts_Model {
 	
 	public Double cost_distance_walking;
 	public Double cost_variable_walking;

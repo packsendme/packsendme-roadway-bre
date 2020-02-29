@@ -1,6 +1,6 @@
 package com.packsendme.lib.bre.roadway.model.costs;
 
-public class MotorcycleCostsModel {
+public class MotorcycleCosts_Model {
 	
 	public Double cost_distance_motorcycle;
 	public Double cost_variable_motorcycle;

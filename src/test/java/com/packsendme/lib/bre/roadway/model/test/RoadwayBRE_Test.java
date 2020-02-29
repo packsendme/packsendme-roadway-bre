@@ -17,24 +17,24 @@ import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.packsendme.lib.bre.roadway.model.RoadwayModel;
-import com.packsendme.lib.bre.roadway.model.costs.BicycleCostsModel;
-import com.packsendme.lib.bre.roadway.model.costs.CarCostsModel;
-import com.packsendme.lib.bre.roadway.model.costs.MotorcycleCostsModel;
-import com.packsendme.lib.bre.roadway.model.costs.TruckCostsModel;
-import com.packsendme.lib.bre.roadway.model.costs.WalkingCostsModel;
+import com.packsendme.lib.bre.roadway.model.RoadwayBRE_Model;
+import com.packsendme.lib.bre.roadway.model.costs.BicycleCosts_Model;
+import com.packsendme.lib.bre.roadway.model.costs.CarCosts_Model;
+import com.packsendme.lib.bre.roadway.model.costs.MotorcycleCosts_Model;
+import com.packsendme.lib.bre.roadway.model.costs.TruckCosts_Model;
+import com.packsendme.lib.bre.roadway.model.costs.WalkingCosts_Model;
 
 //@ExtendWith(SpringExtension.class)
 //@ContextConfiguration
  public class RoadwayBRE_Test {
 
-	 RoadwayModel roadwayBRE = new RoadwayModel();
+	 RoadwayBRE_Model roadwayBRE = new RoadwayBRE_Model();
 
-	BicycleCostsModel bicycleModel = new BicycleCostsModel();
-	CarCostsModel carModel = new CarCostsModel();
-	MotorcycleCostsModel motorcycleModel = new MotorcycleCostsModel();
-	TruckCostsModel truckModel = new TruckCostsModel();
-	WalkingCostsModel walkingModel = new WalkingCostsModel();
+	BicycleCosts_Model bicycleModel = new BicycleCosts_Model();
+	CarCosts_Model carModel = new CarCosts_Model();
+	MotorcycleCosts_Model motorcycleModel = new MotorcycleCosts_Model();
+	TruckCosts_Model truckModel = new TruckCosts_Model();
+	WalkingCosts_Model walkingModel = new WalkingCosts_Model();
 
 	
 	@Test
@@ -96,7 +96,7 @@ import com.packsendme.lib.bre.roadway.model.costs.WalkingCostsModel;
 		URL res = getClass().getClassLoader().getResource("roadwayBRE_v1.json");
 		File file = Paths.get(res.toURI()).toFile();
 		String absolutePath = file.getAbsolutePath();
-		RoadwayModel obj = null;
-		obj = mapper.readValue(new File(absolutePath), RoadwayModel.class);
+		RoadwayBRE_Model obj = null;
+		obj = mapper.readValue(new File(absolutePath), RoadwayBRE_Model.class);
 	} 
 }
