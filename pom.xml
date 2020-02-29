@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.packsendme.lib.bre.roadway</groupId>
-  <artifactId>packsendme-roadwaybre-lib</artifactId>
+  <artifactId>packsendme-roadway-bre-lib</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>packsendme-roadwaybre-lib</name>
+  <name>packsendme-roadway-bre-lib</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
