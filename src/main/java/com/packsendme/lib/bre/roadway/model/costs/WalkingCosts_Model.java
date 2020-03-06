@@ -6,7 +6,7 @@ public class WalkingCosts_Model {
 	public Double cost_variable_walking;
 	public Double percentage_reshipping_walking;
 	public Double percentage_storage_walking;
-	
+	public Double percentage_rate_availability;
 	
 	public Double getCost_distance_walking() {
 		return cost_distance_walking;
@@ -32,10 +32,13 @@ public class WalkingCosts_Model {
 	public void setPercentage_storage_walking(Double percentage_storage_walking) {
 		this.percentage_storage_walking = percentage_storage_walking;
 	}
+	public Double getPercentage_rate_availability() {
+		return percentage_rate_availability;
+	}
+	public void setPercentage_rate_availability(Double percentage_rate_availability) {
+		this.percentage_rate_availability = percentage_rate_availability;
+	}
 	
 	
-
-	
-
 	
 }

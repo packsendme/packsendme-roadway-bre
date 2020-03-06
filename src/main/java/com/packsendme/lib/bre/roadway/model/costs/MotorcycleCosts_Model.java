@@ -6,6 +6,8 @@ public class MotorcycleCosts_Model {
 	public Double cost_variable_motorcycle;
 	public Double percentage_reshipping_motorcycle;
 	public Double percentage_storage_motorcycle;
+	public Double percentage_rate_availability;
+	
 	
 	public Double getCost_distance_motorcycle() {
 		return cost_distance_motorcycle;
@@ -31,6 +33,13 @@ public class MotorcycleCosts_Model {
 	public void setPercentage_storage_motorcycle(Double percentage_storage_motorcycle) {
 		this.percentage_storage_motorcycle = percentage_storage_motorcycle;
 	}
+	public Double getPercentage_rate_availability() {
+		return percentage_rate_availability;
+	}
+	public void setPercentage_rate_availability(Double percentage_rate_availability) {
+		this.percentage_rate_availability = percentage_rate_availability;
+	}
+
 	
 	 
 	

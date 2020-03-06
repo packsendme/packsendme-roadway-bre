@@ -1,11 +1,12 @@
 package com.packsendme.lib.bre.roadway.model.costs;
 
 public class BicycleCosts_Model {
-	
+
 	public Double cost_distance_bicycle;
 	public Double cost_variable_bicycle;
 	public Double percentage_reshipping_bicycle;
 	public Double percentage_storage_bicycle;
+	public Double percentage_rate_availability;
 	
 	public Double getCost_distance_bicycle() {
 		return cost_distance_bicycle;
@@ -16,7 +17,7 @@ public class BicycleCosts_Model {
 	public Double getCost_variable_bicycle() {
 		return cost_variable_bicycle;
 	}
-	public void setCosts_variable_bicycle(Double cost_variable_bicycle) {
+	public void setCost_variable_bicycle(Double cost_variable_bicycle) {
 		this.cost_variable_bicycle = cost_variable_bicycle;
 	}
 	public Double getPercentage_reshipping_bicycle() {
@@ -31,5 +32,13 @@ public class BicycleCosts_Model {
 	public void setPercentage_storage_bicycle(Double percentage_storage_bicycle) {
 		this.percentage_storage_bicycle = percentage_storage_bicycle;
 	}
+	public Double getPercentage_rate_availability() {
+		return percentage_rate_availability;
+	}
+	public void setPercentage_rate_availability(Double percentage_rate_availability) {
+		this.percentage_rate_availability = percentage_rate_availability;
+	}
+	
+	
 
 }

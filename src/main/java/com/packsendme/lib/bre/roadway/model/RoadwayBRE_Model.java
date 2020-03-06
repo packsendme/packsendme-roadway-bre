@@ -2,11 +2,11 @@ package com.packsendme.lib.bre.roadway.model;
 
 import java.util.Date;
 
-import com.packsendme.lib.bre.roadway.model.costs.BicycleCosts_Model;
-import com.packsendme.lib.bre.roadway.model.costs.CarCosts_Model;
-import com.packsendme.lib.bre.roadway.model.costs.MotorcycleCosts_Model;
-import com.packsendme.lib.bre.roadway.model.costs.TruckCosts_Model;
-import com.packsendme.lib.bre.roadway.model.costs.WalkingCosts_Model;
+import com.packsendme.lib.bre.roadway.model.rule.BicycleRule_Model;
+import com.packsendme.lib.bre.roadway.model.rule.CarRule_Model;
+import com.packsendme.lib.bre.roadway.model.rule.MotorcycleRule_Model;
+import com.packsendme.lib.bre.roadway.model.rule.TruckRule_Model;
+import com.packsendme.lib.bre.roadway.model.rule.WalkingRule_Model;
 
 public class RoadwayBRE_Model {
 	
@@ -15,11 +15,11 @@ public class RoadwayBRE_Model {
 	public String date_change;
 	public String status;
 	
-	public BicycleCosts_Model bicycleCosts = new BicycleCosts_Model();
-	public CarCosts_Model carCosts = new CarCosts_Model();
-	public MotorcycleCosts_Model motorcycleCosts = new MotorcycleCosts_Model();
-	public TruckCosts_Model truckCosts = new TruckCosts_Model();
-	public WalkingCosts_Model walkingCosts = new WalkingCosts_Model();
+	public BicycleRule_Model bicycle = new BicycleRule_Model();
+	public CarRule_Model car = new CarRule_Model();
+	public MotorcycleRule_Model motorcycle = new MotorcycleRule_Model();
+	public TruckRule_Model truck = new TruckRule_Model();
+	public WalkingRule_Model walking = new WalkingRule_Model();
 	
 	public String getId_rule() {
 		return id_rule;
@@ -45,37 +45,35 @@ public class RoadwayBRE_Model {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public BicycleCosts_Model getBicycleCosts() {
-		return bicycleCosts;
+	public BicycleRule_Model getBicycle() {
+		return bicycle;
 	}
-	public void setBicycleCosts(BicycleCosts_Model bicycleCosts) {
-		this.bicycleCosts = bicycleCosts;
+	public void setBicycle(BicycleRule_Model bicycle) {
+		this.bicycle = bicycle;
 	}
-	public CarCosts_Model getCarCosts() {
-		return carCosts;
+	public CarRule_Model getCar() {
+		return car;
 	}
-	public void setCarCosts(CarCosts_Model carCosts) {
-		this.carCosts = carCosts;
+	public void setCar(CarRule_Model car) {
+		this.car = car;
 	}
-	public MotorcycleCosts_Model getMotorcycleCosts() {
-		return motorcycleCosts;
+	public MotorcycleRule_Model getMotorcycle() {
+		return motorcycle;
 	}
-	public void setMotorcycleCosts(MotorcycleCosts_Model motorcycleCosts) {
-		this.motorcycleCosts = motorcycleCosts;
+	public void setMotorcycle(MotorcycleRule_Model motorcycle) {
+		this.motorcycle = motorcycle;
 	}
-	public TruckCosts_Model getTruckCosts() {
-		return truckCosts;
+	public TruckRule_Model getTruck() {
+		return truck;
 	}
-	public void setTruckCosts(TruckCosts_Model truckCosts) {
-		this.truckCosts = truckCosts;
+	public void setTruck(TruckRule_Model truck) {
+		this.truck = truck;
 	}
-	public WalkingCosts_Model getWalkingCosts() {
-		return walkingCosts;
+	public WalkingRule_Model getWalking() {
+		return walking;
 	}
-	public void setWalkingCosts(WalkingCosts_Model walkingCosts) {
-		this.walkingCosts = walkingCosts;
-	} 
+	public void setWalking(WalkingRule_Model walking) {
+		this.walking = walking;
+	}
 	
-	
-
 }
