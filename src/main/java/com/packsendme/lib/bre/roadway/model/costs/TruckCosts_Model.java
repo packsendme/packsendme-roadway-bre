@@ -7,6 +7,8 @@ public class TruckCosts_Model {
 	public Double percentage_reshipping_truck;
 	public Double percentage_storage_truck;
 	public Double percentage_cubage_truck;
+	public Double percentage_rate_availability;
+	
 	
 	public Double getCost_distance_truck() {
 		return cost_distance_truck;
@@ -38,10 +40,13 @@ public class TruckCosts_Model {
 	public void setPercentage_cubage_truck(Double percentage_cubage_truck) {
 		this.percentage_cubage_truck = percentage_cubage_truck;
 	}
-	
-	
-	
-	
+	public Double getPercentage_rate_availability() {
+		return percentage_rate_availability;
+	}
+	public void setPercentage_rate_availability(Double percentage_rate_availability) {
+		this.percentage_rate_availability = percentage_rate_availability;
+	}
 
+	
 	
 }

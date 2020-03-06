@@ -1,7 +1,4 @@
 package com.packsendme.lib.bre.roadway.model.test;
-
-
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -10,9 +7,6 @@ import java.nio.file.Paths;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -23,18 +17,32 @@ import com.packsendme.lib.bre.roadway.model.costs.CarCosts_Model;
 import com.packsendme.lib.bre.roadway.model.costs.MotorcycleCosts_Model;
 import com.packsendme.lib.bre.roadway.model.costs.TruckCosts_Model;
 import com.packsendme.lib.bre.roadway.model.costs.WalkingCosts_Model;
+import com.packsendme.lib.bre.roadway.model.rule.BicycleRule_Model;
+import com.packsendme.lib.bre.roadway.model.rule.CarRule_Model;
+import com.packsendme.lib.bre.roadway.model.rule.MotorcycleRule_Model;
+import com.packsendme.lib.bre.roadway.model.rule.TruckRule_Model;
+import com.packsendme.lib.bre.roadway.model.rule.WalkingRule_Model;
 
 //@ExtendWith(SpringExtension.class)
 //@ContextConfiguration
  public class RoadwayBRE_Test {
 
-	 RoadwayBRE_Model roadwayBRE = new RoadwayBRE_Model();
+	RoadwayBRE_Model roadwayBRE = new RoadwayBRE_Model();
 
-	BicycleCosts_Model bicycleModel = new BicycleCosts_Model();
-	CarCosts_Model carModel = new CarCosts_Model();
-	MotorcycleCosts_Model motorcycleModel = new MotorcycleCosts_Model();
-	TruckCosts_Model truckModel = new TruckCosts_Model();
-	WalkingCosts_Model walkingModel = new WalkingCosts_Model();
+	// Rule
+	BicycleRule_Model bicycleRule = new BicycleRule_Model();
+	CarRule_Model carRule = new CarRule_Model();
+	MotorcycleRule_Model motorcycleRule = new MotorcycleRule_Model();
+	TruckRule_Model truckRule = new TruckRule_Model();
+	WalkingRule_Model walkingRule = new WalkingRule_Model();
+
+	
+	// Costs
+	BicycleCosts_Model bicycleCosts = new BicycleCosts_Model();
+	CarCosts_Model carCosts = new CarCosts_Model();
+	MotorcycleCosts_Model motorcycleCosts = new MotorcycleCosts_Model();
+	TruckCosts_Model truckCosts = new TruckCosts_Model();
+	WalkingCosts_Model walkingCosts = new WalkingCosts_Model();
 
 	
 	@Test
@@ -46,42 +54,74 @@ import com.packsendme.lib.bre.roadway.model.costs.WalkingCosts_Model;
 		roadwayBRE.status = "Active";
 		
 		// BicycleModel
-		bicycleModel.cost_distance_bicycle = 1.0;
-		bicycleModel.cost_variable_bicycle = 0.50;
-		bicycleModel.percentage_reshipping_bicycle = 30.0;
-		bicycleModel.percentage_storage_bicycle = 10.0;
-
+		bicycleRule.distance_max_bicycle = 10;
+		bicycleRule.weight_max_bicycle = 30;
+		bicycleRule.percentage_rate_availability_bicycle = 20;
+		
+		bicycleCosts.cost_distance_bicycle = 1.0;
+		bicycleCosts.cost_variable_bicycle = 0.50;
+		bicycleCosts.percentage_reshipping_bicycle = 30.0;
+		bicycleCosts.percentage_storage_bicycle = 10.0;
+		bicycleCosts.percentage_rate_availability = 10.0;
+		bicycleRule.bicycleCosts = bicycleCosts; 
+		
 		// CarCostsModel
-		carModel.cost_distance_car = 1.5;
-		carModel.cost_variable_car = 2.5;
-		carModel.percentage_reshipping_car = 2.0;
-		carModel.percentage_storage_car = 3.2;
-		carModel.percentage_cubage_car = 4.1;
+		carRule.distance_max_car = 10;
+		carRule.weight_max_car = 30;
+		carRule.percentage_rate_availability_car = 20;
 		
+		carCosts.cost_distance_car = 1.5;
+		carCosts.cost_variable_car = 2.5;
+		carCosts.percentage_reshipping_car = 2.0;
+		carCosts.percentage_storage_car = 3.2;
+		carCosts.percentage_cubage_car = 4.1;
+		carCosts.percentage_rate_availability = 10.0;
+		carRule.carCosts = carCosts; 
+
 		//MotorcycleCostsModel
-		motorcycleModel.cost_distance_motorcycle = 4.0;
-		motorcycleModel.cost_variable_motorcycle = 2.3;
-		motorcycleModel.percentage_reshipping_motorcycle = 0.5;
-		motorcycleModel.percentage_storage_motorcycle = 1.0;
+		motorcycleRule.distance_max_motorcycle = 10;
+		motorcycleRule.weight_max_motorcycle = 30;
+		motorcycleRule.percentage_rate_availability_motorcycle = 20;
 		
+		motorcycleCosts.cost_distance_motorcycle = 4.0;
+		motorcycleCosts.cost_variable_motorcycle = 2.3;
+		motorcycleCosts.percentage_reshipping_motorcycle = 0.5;
+		motorcycleCosts.percentage_storage_motorcycle = 1.0;
+		motorcycleCosts.percentage_rate_availability = 10.0;
+		motorcycleRule.motorcycleCosts = motorcycleCosts; 
+
 		//TruckCostsModel
-		truckModel.cost_distance_truck = 1.0;
-		truckModel.cost_variable_truck = 0.6;
-		truckModel.percentage_reshipping_truck = 2.0;
-		truckModel.percentage_storage_truck = 1.5;
-		truckModel.percentage_cubage_truck = 5.0;
+		truckRule.distance_max_truck = 10;
+		truckRule.weight_max_truck = 30;
+		truckRule.percentage_rate_availability_truck = 20;
+		
+		truckCosts.cost_distance_truck = 1.0;
+		truckCosts.cost_variable_truck = 0.6;
+		truckCosts.percentage_reshipping_truck = 2.0;
+		truckCosts.percentage_storage_truck = 1.5;
+		truckCosts.percentage_cubage_truck = 5.0;
+		truckCosts.percentage_rate_availability = 10.0;
+		truckRule.truckCosts = truckCosts; 
+
 		
 		//WalkingCostsModel
-		walkingModel.cost_distance_walking = 1.0;
-		walkingModel.cost_variable_walking = 1.0;
-		walkingModel.percentage_reshipping_walking = 1.5;
-		walkingModel.percentage_storage_walking = 1.5;
+		walkingRule.distance_max_walking = 10;
+		walkingRule.weight_max_walking = 30;
+		walkingRule.percentage_rate_availability_walking = 20;
 		
-		roadwayBRE.bicycleCosts = bicycleModel;
-		roadwayBRE.carCosts = carModel;
-		roadwayBRE.motorcycleCosts = motorcycleModel;
-		roadwayBRE.truckCosts = truckModel;
-		roadwayBRE.walkingCosts = walkingModel;
+		walkingCosts.cost_distance_walking = 1.0;
+		walkingCosts.cost_variable_walking = 1.0;
+		walkingCosts.percentage_reshipping_walking = 1.5;
+		walkingCosts.percentage_storage_walking = 1.5;
+		walkingCosts.percentage_rate_availability = 10.0;
+		walkingRule.walkingCosts = walkingCosts; 
+
+		
+		roadwayBRE.bicycle = bicycleRule;
+		roadwayBRE.car  = carRule;
+		roadwayBRE.motorcycle = motorcycleRule;
+		roadwayBRE.truck = truckRule;
+		roadwayBRE.walking = walkingRule;
 			
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonSouthAmerica = mapper.writeValueAsString(roadwayBRE);
@@ -98,5 +138,5 @@ import com.packsendme.lib.bre.roadway.model.costs.WalkingCosts_Model;
 		String absolutePath = file.getAbsolutePath();
 		RoadwayBRE_Model obj = null;
 		obj = mapper.readValue(new File(absolutePath), RoadwayBRE_Model.class);
-	} 
+	}
 }
