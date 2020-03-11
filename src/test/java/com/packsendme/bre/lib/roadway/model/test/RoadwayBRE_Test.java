@@ -3,8 +3,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
@@ -24,6 +22,7 @@ import com.packsendme.bre.lib.roadway.rule.instance.model.WalkingInstance_Model;
 
 	RoadwayBRE_Model roadwayBRE = new RoadwayBRE_Model();
 	private String jsonSouthAmerica = null;
+	private String url_json = "src/test/resources/roadwayBRE_v1.json";
 
 	
 	// Rule
@@ -122,14 +121,14 @@ import com.packsendme.bre.lib.roadway.rule.instance.model.WalkingInstance_Model;
 
 	void inputJsonFileSouthAmerica(String jsonSouthAmerica) throws IOException, URISyntaxException {
 		ObjectMapper mapper = new ObjectMapper();
-		URL res = getClass().getClassLoader().getResource("roadwayBRE_v1.json");
-		File file = Paths.get(res.toURI()).toFile();
+		File file = new File(url_json);
 		if (file.length() != 0) {
 			String absolutePath = file.getAbsolutePath();
 			RoadwayBRE_Model obj = mapper.readValue(new File(absolutePath), RoadwayBRE_Model.class);
+			Assert.notNull(obj);
 		}
 		else {
-			try (FileWriter fileWriter = new FileWriter("src/test/java/roadwayBRE_v1.json", true)) {
+			try (FileWriter fileWriter = new FileWriter(url_json, true)) {
 			    fileWriter.write(jsonSouthAmerica);
 			}
 		}
