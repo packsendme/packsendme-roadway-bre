@@ -82,7 +82,7 @@ import com.packsendme.bre.lib.roadway.rule.instance.model.WalkingInstance_Model;
 		motorcycleInstance.motorcycleCosts.percentage_rate_availability = 10.0;
 
 		//TruckCostsModel
-		truckInstance.distance_max_truck = 10.3;
+		truckInstance.allow_cross_continent_truck = false;
 		truckInstance.weight_max_truck = 30.2;
 		truckInstance.percentage_rate_availability_truck = 20.5;
 		

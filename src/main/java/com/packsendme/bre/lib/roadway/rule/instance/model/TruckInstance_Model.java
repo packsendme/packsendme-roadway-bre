@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class TruckInstance_Model {
 
-	public Double distance_max_truck;
+	public boolean allow_cross_continent_truck;
 	public Double weight_max_truck;
 	public Double percentage_rate_availability_truck;
 	public TruckCosts_Model truckCosts = new TruckCosts_Model();

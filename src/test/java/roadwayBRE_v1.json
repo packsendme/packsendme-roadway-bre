@@ -1,6 +1,6 @@
 {
 	"id_rule": "0010101",
-	"date_creation": 1583857610806,
+	"date_creation": 1583915426988,
 	"date_change": null,
 	"unity_measurement_weight": "KG",
 	"unity_measurement_distance": "KM",
@@ -46,7 +46,7 @@
 		}
 	},
 	"truck": {
-		"distance_max_truck": 10.3,
+		"allow_cross_continent_truck": false,
 		"weight_max_truck": 30.2,
 		"percentage_rate_availability_truck": 20.5,
 		"truckCosts": {
