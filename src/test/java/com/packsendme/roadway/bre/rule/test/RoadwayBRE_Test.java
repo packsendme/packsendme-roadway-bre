@@ -1,4 +1,4 @@
-package com.packsendme.bre.lib.roadway.model.test;
+package com.packsendme.roadway.bre.rule.test;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.packsendme.bre.lib.roadway.model.RoadwayBRE_Model;
-import com.packsendme.bre.lib.roadway.rule.instance.model.BicycleInstance_Model;
-import com.packsendme.bre.lib.roadway.rule.instance.model.CarInstance_Model;
-import com.packsendme.bre.lib.roadway.rule.instance.model.MotorcycleInstance_Model;
-import com.packsendme.bre.lib.roadway.rule.instance.model.TruckInstance_Model;
-import com.packsendme.bre.lib.roadway.rule.instance.model.WalkingInstance_Model;
+import com.packsendme.roadway.bre.rule.instance.model.BicycleInstance_Model;
+import com.packsendme.roadway.bre.rule.instance.model.CarInstance_Model;
+import com.packsendme.roadway.bre.rule.instance.model.MotorcycleInstance_Model;
+import com.packsendme.roadway.bre.rule.instance.model.TruckInstance_Model;
+import com.packsendme.roadway.bre.rule.instance.model.WalkingInstance_Model;
+import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 
 //@ExtendWith(SpringExtension.class)
 //@ContextConfiguration

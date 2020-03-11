@@ -1,6 +1,6 @@
-package com.packsendme.bre.lib.roadway.rule.instance.model;
+package com.packsendme.roadway.bre.rule.instance.model;
 
-import com.packsendme.bre.lib.roadway.rule.costs.model.WalkCosts_Model;
+import com.packsendme.roadway.bre.rule.costs.model.WalkCosts_Model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
