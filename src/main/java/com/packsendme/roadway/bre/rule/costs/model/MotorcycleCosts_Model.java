@@ -1,4 +1,4 @@
-package com.packsendme.bre.lib.roadway.rule.costs.model;
+package com.packsendme.roadway.bre.rule.costs.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
