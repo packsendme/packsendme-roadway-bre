@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter 
 @Setter 
 @NoArgsConstructor
-public class RoadwayBRE_Model {
+public class RoadwayInstanceBRE_Model {
 	
 	public String id_rule;
 	public Date date_creation;

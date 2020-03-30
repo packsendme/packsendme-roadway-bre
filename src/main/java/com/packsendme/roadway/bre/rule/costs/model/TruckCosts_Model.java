@@ -9,10 +9,15 @@ import lombok.Setter;
 @NoArgsConstructor
 public class TruckCosts_Model {
 	
-	public Double cost_weight_truck;
-	public Double cost_distance_truck;
-	public Double cost_variable_truck;
-	public Double percentage_reshipping_truck;
-	public Double percentage_storage_truck;
+	// Fixed based cost (weight, distance...)
+	public Double weight_cost;
+	public Double distance_cost;
+	
+	// Fixed delivery cost (tolls, fuel...)
+	public Double tolls_average_cost;
+	public Double fuel_average_cost;
+
+	// Percentage PackSendMe
+	public Double percentage_reshipping_bicycle;
 	public Double percentage_rate_availability;
 }

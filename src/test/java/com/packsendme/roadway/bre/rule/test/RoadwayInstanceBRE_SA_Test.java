@@ -14,16 +14,15 @@ import com.packsendme.roadway.bre.rule.instance.model.CarInstance_Model;
 import com.packsendme.roadway.bre.rule.instance.model.MotorcycleInstance_Model;
 import com.packsendme.roadway.bre.rule.instance.model.TruckInstance_Model;
 import com.packsendme.roadway.bre.rule.instance.model.WalkingInstance_Model;
-import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
+import com.packsendme.roadway.bre.rule.model.RoadwayInstanceBRE_Model;
 
 //@ExtendWith(SpringExtension.class)
 //@ContextConfiguration
- public class RoadwayBRE_Test {
+ public class RoadwayInstanceBRE_SA_Test {
 
-	RoadwayBRE_Model roadwayBRE = new RoadwayBRE_Model();
+	RoadwayInstanceBRE_Model roadwayBRE = new RoadwayInstanceBRE_Model();
 	private String jsonSouthAmerica = null;
-	private String url_json = "src/test/resources/roadwayBRE_v1.json";
-
+	private String url_json = "src/test/resources/roadwayBRE_sa_v1.json";
 	
 	// Rule
 	BicycleInstance_Model bicycleInstance = new BicycleInstance_Model();
@@ -44,67 +43,32 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		roadwayBRE.unity_measurement_distance = "KM";
 		roadwayBRE.currency_cost = "R$";
 		
-		// BicycleModel
+		// BicycleInstance_Model
 		bicycleInstance.distance_max_bicycle = 10.0;
 		bicycleInstance.weight_max_bicycle = 30.0;
 		bicycleInstance.percentage_rate_availability_bicycle = 20.0;
 		
-		bicycleInstance.bicycleCosts.cost_weight_bicycle = 0.30;
-		bicycleInstance.bicycleCosts.cost_distance_bicycle = 1.0;
-		bicycleInstance.bicycleCosts.cost_variable_bicycle = 0.50;
-		bicycleInstance.bicycleCosts.percentage_reshipping_bicycle = 30.0;
-		bicycleInstance.bicycleCosts.percentage_storage_bicycle = 10.0;
-		bicycleInstance.bicycleCosts.percentage_rate_availability = 10.0;
-		
-		// CarCostsModel
+		// CarInstance_Model
 		carInstance.distance_max_car = 10.0;
 		carInstance.weight_max_car = 30.0;
 		carInstance.percentage_rate_availability_car = 20.5;
 
-		carInstance.carCosts.cost_weight_car = 0.30;
-		carInstance.carCosts.cost_distance_car = 1.5;
-		carInstance.carCosts.cost_variable_car = 2.5;
-		carInstance.carCosts.percentage_reshipping_car = 2.0;
-		carInstance.carCosts.percentage_storage_car = 3.2;
-		carInstance.carCosts.percentage_rate_availability = 10.0;
-
-		//MotorcycleCostsModel
+		//Motorcycle_Model
 		motorcycleInstance.distance_max_motorcycle = 10.2;
 		motorcycleInstance.weight_max_motorcycle = 30.4;
 		motorcycleInstance.percentage_rate_availability_motorcycle = 20.3;
 		
-		motorcycleInstance.motorcycleCosts.cost_weight_motorcycle = 0.30;
-		motorcycleInstance.motorcycleCosts.cost_distance_motorcycle = 4.0;
-		motorcycleInstance.motorcycleCosts.cost_variable_motorcycle = 2.3;
-		motorcycleInstance.motorcycleCosts.percentage_reshipping_motorcycle = 0.5;
-		motorcycleInstance.motorcycleCosts.percentage_storage_motorcycle = 1.0;
-		motorcycleInstance.motorcycleCosts.percentage_rate_availability = 10.0;
-
-		//TruckCostsModel
+		//Truck_Model
 		truckInstance.allow_cross_continent_truck = false;
 		truckInstance.weight_max_truck = 30.2;
 		truckInstance.percentage_rate_availability_truck = 20.5;
 		
-		truckInstance.truckCosts.cost_weight_truck = 0.30;
-		truckInstance.truckCosts.cost_distance_truck = 1.0;
-		truckInstance.truckCosts.cost_variable_truck = 0.6;
-		truckInstance.truckCosts.percentage_reshipping_truck = 2.0;
-		truckInstance.truckCosts.percentage_storage_truck = 1.5;
-		truckInstance.truckCosts.percentage_rate_availability = 10.0;
-		
-		//WalkingCostsModel
+		//Walking_Model
 		walkingInstance.distance_max_walking = 10.3;
 		walkingInstance.weight_max_walking = 30.2;
 		walkingInstance.percentage_rate_availability_walking = 20.4;
 		
-		walkingInstance.walkingCosts.cost_weight_walk = 0.30;
-		walkingInstance.walkingCosts.cost_weight_walk = 5.0;
-		walkingInstance.walkingCosts.cost_distance_walk = 0.50;
-		walkingInstance.walkingCosts.cost_variable_walk = 1.0;
-		walkingInstance.walkingCosts.percentage_reshipping_walk = 1.5;
-		walkingInstance.walkingCosts.percentage_storage_walk = 1.5;
-		walkingInstance.walkingCosts.percentage_rate_availability = 10.0;
-
+		
 		roadwayBRE.bicycle = bicycleInstance;
 		roadwayBRE.car  = carInstance;
 		roadwayBRE.motorcycle = motorcycleInstance;
@@ -124,7 +88,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		File file = new File(url_json);
 		if (file.length() != 0) {
 			String absolutePath = file.getAbsolutePath();
-			RoadwayBRE_Model obj = mapper.readValue(new File(absolutePath), RoadwayBRE_Model.class);
+			RoadwayInstanceBRE_Model obj = mapper.readValue(new File(absolutePath), RoadwayInstanceBRE_Model.class);
 			Assert.notNull(obj);
 		}
 		else {
