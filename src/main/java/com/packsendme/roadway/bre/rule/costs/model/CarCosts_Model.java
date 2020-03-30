@@ -8,12 +8,17 @@ import lombok.Setter;
 @Setter 
 @NoArgsConstructor
 public class CarCosts_Model {
+
+	// Fixed based cost (weight, distance...)
+	public Double weight_cost;
+	public Double distance_cost;
 	
-	public Double cost_weight_car;
-	public Double cost_distance_car;
-	public Double cost_variable_car;
-	public Double percentage_reshipping_car;
-	public Double percentage_storage_car;
+	// Fixed delivery cost (tolls, fuel...)
+	public Double tolls_average_cost;
+	public Double fuel_average_cost;
+
+	// Percentage PackSendMe
+	public Double percentage_reshipping_bicycle;
 	public Double percentage_rate_availability;
 			
 }

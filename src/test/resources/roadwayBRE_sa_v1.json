@@ -1,0 +1,34 @@
+{
+	"id_rule": "0010101",
+	"date_creation": 1583928372303,
+	"date_change": null,
+	"unity_measurement_weight": "KG",
+	"unity_measurement_distance": "KM",
+	"currency_cost": "R$",
+	"status": "Active",
+	"bicycle": {
+		"distance_max_bicycle": 10.0,
+		"weight_max_bicycle": 30.0,
+		"percentage_rate_availability_bicycle": 20.0
+	},
+	"car": {
+		"distance_max_car": 10.0,
+		"weight_max_car": 30.0,
+		"percentage_rate_availability_car": 20.5
+	},
+	"motorcycle": {
+		"distance_max_motorcycle": 10.2,
+		"weight_max_motorcycle": 30.4,
+		"percentage_rate_availability_motorcycle": 20.3
+	},
+	"truck": {
+		"allow_cross_continent_truck": false,
+		"weight_max_truck": 30.2,
+		"percentage_rate_availability_truck": 20.5
+	},
+	"walking": {
+		"distance_max_walking": 10.3,
+		"weight_max_walking": 30.2,
+		"percentage_rate_availability_walking": 20.4
+	}
+}
