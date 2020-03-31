@@ -1,4 +1,4 @@
-package com.packsendme.roadway.bre.rule.test;
+package com.packsendme.roadway.bre.rule.sa.test;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
