@@ -1,4 +1,4 @@
-package com.packsendme.roadway.bre.rule.test;
+package com.packsendme.roadway.bre.rule.sa.test;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -15,10 +15,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.roadway.bre.rule.costs.model.BicycleCosts_Model;
 import com.packsendme.roadway.bre.rule.costs.model.CarCosts_Model;
 import com.packsendme.roadway.bre.rule.costs.model.MotorcycleCosts_Model;
+import com.packsendme.roadway.bre.rule.costs.model.CountryCosts_Model;
 import com.packsendme.roadway.bre.rule.costs.model.TruckCosts_Model;
 import com.packsendme.roadway.bre.rule.costs.model.WalkCosts_Model;
-import com.packsendme.roadway.bre.rule.model.CostsBRE_Model;
-import com.packsendme.roadway.bre.rule.model.RoadwayAnalyzeCosts_Model;
+import com.packsendme.roadway.bre.rule.model.RoadwayCostsBRE_Model;
 
 //@ExtendWith(SpringExtension.class)
 //@ContextConfiguration
@@ -26,7 +26,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayAnalyzeCosts_Model;
 
 	private String jsonSouthAmerica = null;
 	private String url_json = "src/test/resources/Country_SA.txt";
-	private String url_roadwaycosts_json = "src/test/resources/roadway_costs_v1.json";
+	private String url_roadwaycosts_json = "src/test/resources/roadway_costs_sa.json";
 
 	
 	// Rule
@@ -39,8 +39,8 @@ import com.packsendme.roadway.bre.rule.model.RoadwayAnalyzeCosts_Model;
 	
 	@Test
 	void generateJsonSouthAmerica() throws URISyntaxException, IOException {
-		CostsBRE_Model costsBRE = new CostsBRE_Model();
-		RoadwayAnalyzeCosts_Model roadwayAnalyzeCosts = new RoadwayAnalyzeCosts_Model();
+		CountryCosts_Model costsBRE = new CountryCosts_Model();
+		RoadwayCostsBRE_Model roadwayAnalyzeCosts = new RoadwayCostsBRE_Model();
 
 		//Map<String,CostsBRE_Model> costsBRE = new HashMap<String,CostsBRE_Model>();
 		List<String> countryL = getCountry();
@@ -99,7 +99,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayAnalyzeCosts_Model;
 			costsBRE.truck = truckCosts;
 			costsBRE.walking = walkingCosts;
 			
-			roadwayAnalyzeCosts.costsBRE.put(country, costsBRE);
+			roadwayAnalyzeCosts.countryCosts.put(country, costsBRE);
 		}		
 		
 		ObjectMapper mapper = new ObjectMapper();
