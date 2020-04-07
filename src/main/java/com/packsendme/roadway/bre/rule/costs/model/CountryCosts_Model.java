@@ -9,6 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CountryCosts_Model {
 	
+	public String name_country;
 	public BicycleCosts_Model bicycle = new BicycleCosts_Model();
 	public CarCosts_Model car = new CarCosts_Model();
 	public MotorcycleCosts_Model motorcycle = new MotorcycleCosts_Model();
