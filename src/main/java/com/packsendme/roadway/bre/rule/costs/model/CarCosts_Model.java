@@ -1,5 +1,7 @@
 package com.packsendme.roadway.bre.rule.costs.model;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,7 +9,12 @@ import lombok.Setter;
 @Getter 
 @Setter 
 @NoArgsConstructor
-public class CarCosts_Model {
+public class CarCosts_Model implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	// Fixed based cost (weight, distance...)
 	public Double weight_cost;
