@@ -23,7 +23,6 @@ public class RoadwayBRE_Model implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public static final String OBJECT_KEY = "RoadwayBRE_SA";
 	
 	public int id_rule = 1;
 	public Date date_creation;
