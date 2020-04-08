@@ -52,9 +52,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	@Test
 	void generateJsonSouthAmerica() throws URISyntaxException, IOException {
 		
-		
 		// RoadwayModel
-		roadwayBRE.id_rule = "0010101";
 		roadwayBRE.date_creation = new Date();
 		roadwayBRE.date_change = null;
 		roadwayBRE.status = "Active";
