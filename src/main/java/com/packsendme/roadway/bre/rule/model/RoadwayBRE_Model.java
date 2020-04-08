@@ -1,9 +1,8 @@
 package com.packsendme.roadway.bre.rule.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-
-import org.springframework.data.redis.core.RedisHash;
 
 import com.packsendme.roadway.bre.rule.costs.model.CountryCosts_Model;
 import com.packsendme.roadway.bre.rule.instance.model.BicycleInstance_Model;
@@ -17,9 +16,13 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-@RedisHash("RoadwayBRE")
-public class RoadwayBRE_Model {
+//@RedisHash("RoadwayBRE")
+public class RoadwayBRE_Model implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public String id_rule;
 	public Date date_creation;
 	public String date_change;
