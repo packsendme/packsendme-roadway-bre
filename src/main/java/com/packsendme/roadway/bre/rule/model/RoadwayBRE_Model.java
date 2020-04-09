@@ -16,7 +16,6 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-//@RedisHash("RoadwayBRE")
 public class RoadwayBRE_Model implements Serializable {
 	
 	/**
