@@ -34,6 +34,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	private String jsonSouthAmerica = null;
 	private String url_json = "src/test/resources/roadwayBRE_sa_v1.json";
 	private String json_country_sa = "src/test/resources/Country_SA.txt";
+	private final String name_rule = "Roadway-SouthAmerica-BRE";
 
 	// Rule
 	BicycleInstance_Model bicycleInstance = new BicycleInstance_Model();
@@ -53,6 +54,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	void generateJsonSouthAmerica() throws URISyntaxException, IOException {
 		
 		// RoadwayModel
+		roadwayBRE.name_rule = name_rule;
 		roadwayBRE.date_creation = new Date();
 		roadwayBRE.date_change = null;
 		roadwayBRE.status = "Active";
