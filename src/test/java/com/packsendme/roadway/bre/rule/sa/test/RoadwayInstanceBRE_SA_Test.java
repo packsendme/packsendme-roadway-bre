@@ -15,13 +15,14 @@ import org.springframework.util.Assert;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.roadway.bre.rule.costs.model.BicycleCosts_Model;
 import com.packsendme.roadway.bre.rule.costs.model.CarCosts_Model;
-import com.packsendme.roadway.bre.rule.costs.model.CountryCosts_Model;
 import com.packsendme.roadway.bre.rule.costs.model.MotorcycleCosts_Model;
+import com.packsendme.roadway.bre.rule.costs.model.RuleCosts_Model;
 import com.packsendme.roadway.bre.rule.costs.model.TruckCosts_Model;
 import com.packsendme.roadway.bre.rule.costs.model.WalkCosts_Model;
 import com.packsendme.roadway.bre.rule.instance.model.BicycleInstance_Model;
 import com.packsendme.roadway.bre.rule.instance.model.CarInstance_Model;
 import com.packsendme.roadway.bre.rule.instance.model.MotorcycleInstance_Model;
+import com.packsendme.roadway.bre.rule.instance.model.RuleInstance_Model;
 import com.packsendme.roadway.bre.rule.instance.model.TruckInstance_Model;
 import com.packsendme.roadway.bre.rule.instance.model.WalkingInstance_Model;
 import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
@@ -37,18 +38,13 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	private final String name_rule = "Roadway-SouthAmerica-BRE";
 
 	// Rule
+	RuleInstance_Model ruleInstance = new RuleInstance_Model();
 	BicycleInstance_Model bicycleInstance = new BicycleInstance_Model();
 	CarInstance_Model carInstance = new CarInstance_Model();
 	MotorcycleInstance_Model motorcycleInstance = new MotorcycleInstance_Model();
 	TruckInstance_Model truckInstance = new TruckInstance_Model();
 	WalkingInstance_Model walkingInstance = new WalkingInstance_Model();
 	
-	// Rule
-	BicycleCosts_Model bicycleCosts = new BicycleCosts_Model();
-	CarCosts_Model carCosts = new CarCosts_Model();
-	MotorcycleCosts_Model motorcycleCosts = new MotorcycleCosts_Model();
-	TruckCosts_Model truckCosts = new TruckCosts_Model();
-	WalkCosts_Model walkingCosts = new WalkCosts_Model();
 	
 	@Test
 	void generateJsonSouthAmerica() throws URISyntaxException, IOException {
@@ -88,12 +84,13 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		walkingInstance.percentage_rate_availability_walking = 20.4;
 		
 		
-		roadwayBRE.bicycle = bicycleInstance;
-		roadwayBRE.car  = carInstance;
-		roadwayBRE.motorcycle = motorcycleInstance;
-		roadwayBRE.truck = truckInstance;
-		roadwayBRE.walking = walkingInstance;
-		
+		ruleInstance.bicycle = bicycleInstance;
+		ruleInstance.car  = carInstance;
+		ruleInstance.motorcycle = motorcycleInstance;
+		ruleInstance.truck = truckInstance;
+		ruleInstance.walking = walkingInstance;
+		roadwayBRE.ruleInstance = ruleInstance;
+				
 		roadwayBRE = generateCosts(roadwayBRE);
 			
 		ObjectMapper mapper = new ObjectMapper();
@@ -104,11 +101,20 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	}
 	
 	RoadwayBRE_Model generateCosts(RoadwayBRE_Model roadwayBRE) {
-		CountryCosts_Model costsBRE = new CountryCosts_Model();
-		ArrayList<CountryCosts_Model> countryCostsL = new ArrayList<CountryCosts_Model>();
+		RuleCosts_Model ruleCosts = new RuleCosts_Model();
+		ArrayList<RuleCosts_Model> costsL = new ArrayList<RuleCosts_Model>();
+		
+		// Rule
+		BicycleCosts_Model bicycleCosts = new BicycleCosts_Model();
+		CarCosts_Model carCosts = new CarCosts_Model();
+		MotorcycleCosts_Model motorcycleCosts = new MotorcycleCosts_Model();
+		TruckCosts_Model truckCosts = new TruckCosts_Model();
+		WalkCosts_Model walkingCosts = new WalkCosts_Model();
+
 		
 		List<String> countryL = getCountry();
 
+		ArrayList<RuleCosts_Model> countryCostsL;
 		for(String country : countryL) {
 			
 			// BicycleCosts_Model
@@ -148,20 +154,17 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			walkingCosts.percentage_rate_availability = 20.1;
 			
 			// BRE
-			costsBRE.name_country = country;
-			costsBRE.bicycle = bicycleCosts;
-			costsBRE.car = carCosts;
-			costsBRE.motorcycle = motorcycleCosts;
-			costsBRE.truck = truckCosts;
-			costsBRE.walking = walkingCosts;
-			countryCostsL.add(costsBRE);
-			costsBRE = new CountryCosts_Model();
-			System.out.println("Country  "+ costsBRE.name_country);
-			System.out.println("Size  "+ countryCostsL.size());
-
+			ruleCosts.name_country = country;
+			ruleCosts.bicycle = bicycleCosts;
+			ruleCosts.car = carCosts;
+			ruleCosts.motorcycle = motorcycleCosts;
+			ruleCosts.truck = truckCosts;
+			ruleCosts.walking = walkingCosts;
+			costsL.add(ruleCosts);
+			ruleCosts = new RuleCosts_Model();
 		}
 
-		roadwayBRE.costsCountry = countryCostsL;
+		roadwayBRE.ruleCosts = costsL;
 		return roadwayBRE;
 	}
 	

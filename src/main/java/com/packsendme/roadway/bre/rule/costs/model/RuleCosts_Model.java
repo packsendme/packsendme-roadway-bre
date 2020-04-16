@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter 
 @Setter 
 @NoArgsConstructor
-public class CountryCosts_Model implements Serializable {
+public class RuleCosts_Model implements Serializable {
 	
 	/**
 	 * 
