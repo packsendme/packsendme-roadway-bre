@@ -4,12 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.packsendme.roadway.bre.rule.costs.model.CountryCosts_Model;
-import com.packsendme.roadway.bre.rule.instance.model.BicycleInstance_Model;
-import com.packsendme.roadway.bre.rule.instance.model.CarInstance_Model;
-import com.packsendme.roadway.bre.rule.instance.model.MotorcycleInstance_Model;
-import com.packsendme.roadway.bre.rule.instance.model.TruckInstance_Model;
-import com.packsendme.roadway.bre.rule.instance.model.WalkingInstance_Model;
+import com.packsendme.roadway.bre.rule.costs.model.RuleCosts_Model;
+import com.packsendme.roadway.bre.rule.instance.model.RuleInstance_Model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -31,11 +27,6 @@ public class RoadwayBRE_Model implements Serializable {
 	public String currency_cost;
 	public String status;
 	
-	public BicycleInstance_Model bicycle = new BicycleInstance_Model();
-	public CarInstance_Model car = new CarInstance_Model();
-	public MotorcycleInstance_Model motorcycle = new MotorcycleInstance_Model();
-	public TruckInstance_Model truck = new TruckInstance_Model();
-	public WalkingInstance_Model walking = new WalkingInstance_Model();
-	
-	public ArrayList<CountryCosts_Model> costsCountry = new ArrayList<CountryCosts_Model>();
+	public RuleInstance_Model ruleInstance = new RuleInstance_Model();
+	public ArrayList<RuleCosts_Model> ruleCosts = new ArrayList<RuleCosts_Model>();
 }
