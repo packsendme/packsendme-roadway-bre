@@ -130,6 +130,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			carCosts.fuel_average_cost = 0.40;
 			carCosts.percentage_reshipping_bicycle = 0.40;
 			carCosts.percentage_rate_availability = 10.0;
+			carCosts.average_consumption_cost = 10.0;
 
 			//Motorcycle_Model
 			motorcycleCosts.weight_cost = 0.60;
@@ -138,6 +139,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			motorcycleCosts.fuel_average_cost = 0.60;
 			motorcycleCosts.percentage_reshipping_bicycle = 0.60;
 			motorcycleCosts.percentage_rate_availability = 0.60;
+			motorcycleCosts.average_consumption_cost = 10.0;
 
 			//Truck_Model
 			truckCosts.weight_cost = 0.20;
@@ -146,6 +148,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			truckCosts.fuel_average_cost = 20.0;
 			truckCosts.percentage_reshipping_bicycle = 12.5;
 			truckCosts.percentage_rate_availability = 0.40;
+			truckCosts.average_consumption_cost = 10.0;
 			
 			//Walking_Model
 			walkingCosts.weight_cost = 2.40;

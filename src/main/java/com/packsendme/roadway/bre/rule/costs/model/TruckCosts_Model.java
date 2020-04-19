@@ -19,6 +19,7 @@ public class TruckCosts_Model implements Serializable {
 	// Fixed based cost (weight, distance...)
 	public Double weight_cost;
 	public Double distance_cost;
+	public Double average_consumption_cost;
 	
 	// Fixed delivery cost (tolls, fuel...)
 	public Double tolls_average_cost;
