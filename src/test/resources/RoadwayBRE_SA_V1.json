@@ -1,6 +1,6 @@
 {
 	"name_rule": "Roadway-SouthAmerica-BRE",
-	"date_creation": 1587323825011,
+	"date_creation": 1587329633048,
 	"date_change": null,
 	"unity_measurement_weight": "KG",
 	"unity_measurement_distance": "KM",
@@ -33,497 +33,510 @@
 			"percentage_rate_availability_walking": 20.4
 		}
 	},
-	"ruleCosts": [{
-		"name_country": "Brazil",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
+	"ruleCosts": {
+		"Colombia": {
+			"name_country": "Colombia",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
 		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
+		"Venezuela": {
+			"name_country": "Venezuela",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
 		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
+		"Ecuador": {
+			"name_country": "Ecuador",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
 		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
+		"Argentina": {
+			"name_country": "Argentina",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
 		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
+		"Uruguay": {
+			"name_country": "Uruguay",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
+		},
+		"Brazil": {
+			"name_country": "Brazil",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
+		},
+		"Guyana": {
+			"name_country": "Guyana",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
+		},
+		"Suriname": {
+			"name_country": "Suriname",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
+		},
+		"Chile": {
+			"name_country": "Chile",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
+		},
+		"Bolivia": {
+			"name_country": "Bolivia",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
+		},
+		"Paraguay": {
+			"name_country": "Paraguay",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
+		},
+		"Peru": {
+			"name_country": "Peru",
+			"bicycle": {
+				"cost_weight_bicycle": 10.0,
+				"cost_distance_bicycle": 30.0,
+				"percentage_reshipping_bicycle": 20.0,
+				"percentage_rate_availability": 20.0
+			},
+			"car": {
+				"weight_cost": 0.5,
+				"distance_cost": 1.0,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.7,
+				"fuel_average_cost": 0.4,
+				"percentage_reshipping_bicycle": 0.4,
+				"percentage_rate_availability": 10.0
+			},
+			"motorcycle": {
+				"weight_cost": 0.6,
+				"distance_cost": 0.6,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 0.6,
+				"fuel_average_cost": 0.6,
+				"percentage_reshipping_bicycle": 0.6,
+				"percentage_rate_availability": 0.6
+			},
+			"truck": {
+				"weight_cost": 0.2,
+				"distance_cost": 0.8,
+				"average_consumption_cost": 10.0,
+				"tolls_average_cost": 10.0,
+				"fuel_average_cost": 20.0,
+				"percentage_reshipping_bicycle": 12.5,
+				"percentage_rate_availability": 0.4
+			},
+			"walking": {
+				"weight_cost": 2.4,
+				"distance_cost": 50.0,
+				"percentage_reshipping_bicycle": 1.2,
+				"percentage_rate_availability": 20.1
+			}
 		}
-	}, {
-		"name_country": "Colombia",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Argentina",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Peru",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Venezuela",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Chile",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Ecuador",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Bolivia",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Paraguay",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Uruguay",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Guyana",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}, {
-		"name_country": "Suriname",
-		"bicycle": {
-			"cost_weight_bicycle": 10.0,
-			"cost_distance_bicycle": 30.0,
-			"percentage_reshipping_bicycle": 20.0,
-			"percentage_rate_availability": 20.0
-		},
-		"car": {
-			"weight_cost": 0.5,
-			"distance_cost": 1.0,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.7,
-			"fuel_average_cost": 0.4,
-			"percentage_reshipping_bicycle": 0.4,
-			"percentage_rate_availability": 10.0
-		},
-		"motorcycle": {
-			"weight_cost": 0.6,
-			"distance_cost": 0.6,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 0.6,
-			"fuel_average_cost": 0.6,
-			"percentage_reshipping_bicycle": 0.6,
-			"percentage_rate_availability": 0.6
-		},
-		"truck": {
-			"weight_cost": 0.2,
-			"distance_cost": 0.8,
-			"average_consumption_cost": 10.0,
-			"tolls_average_cost": 10.0,
-			"fuel_average_cost": 20.0,
-			"percentage_reshipping_bicycle": 12.5,
-			"percentage_rate_availability": 0.4
-		},
-		"walking": {
-			"weight_cost": 2.4,
-			"distance_cost": 50.0,
-			"percentage_reshipping_bicycle": 1.2,
-			"percentage_rate_availability": 20.1
-		}
-	}]
+	}
 }

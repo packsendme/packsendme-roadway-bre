@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
@@ -102,7 +104,8 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	
 	RoadwayBRE_Model generateCosts(RoadwayBRE_Model roadwayBRE) {
 		RuleCosts_Model ruleCosts = new RuleCosts_Model();
-		ArrayList<RuleCosts_Model> costsL = new ArrayList<RuleCosts_Model>();
+		//ArrayList<RuleCosts_Model> costsL = new ArrayList<RuleCosts_Model>();
+		Map<String,RuleCosts_Model> costsL = new HashMap<String,RuleCosts_Model>();
 		
 		// Rule
 		BicycleCosts_Model bicycleCosts = new BicycleCosts_Model();
@@ -163,7 +166,8 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			ruleCosts.motorcycle = motorcycleCosts;
 			ruleCosts.truck = truckCosts;
 			ruleCosts.walking = walkingCosts;
-			costsL.add(ruleCosts);
+			//costsL.add(ruleCosts);
+			costsL.put(country, ruleCosts);
 			ruleCosts = new RuleCosts_Model();
 		}
 
