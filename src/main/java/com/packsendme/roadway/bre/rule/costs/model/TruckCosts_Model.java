@@ -24,8 +24,4 @@ public class TruckCosts_Model implements Serializable {
 	// Fixed delivery cost (tolls, fuel...)
 	public Double tolls_average_cost;
 	public Double fuel_average_cost;
-
-	// Percentage PackSendMe
-	public Double percentage_reshipping_bicycle;
-	public Double percentage_rate_availability;
 }

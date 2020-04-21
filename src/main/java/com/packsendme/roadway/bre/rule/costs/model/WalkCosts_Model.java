@@ -19,8 +19,4 @@ public class WalkCosts_Model implements Serializable {
 	// Fixed based cost (weight, distance...)
 	public Double weight_cost;
 	public Double distance_cost;
-
-	// Percentage PackSendMe
-	public Double percentage_reshipping_bicycle;
-	public Double percentage_rate_availability;
 }

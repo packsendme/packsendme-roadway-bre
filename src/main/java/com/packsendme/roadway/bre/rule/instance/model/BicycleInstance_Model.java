@@ -19,4 +19,9 @@ public class BicycleInstance_Model implements Serializable {
 	public Double weight_max_bicycle;
 	public Double percentage_rate_availability_bicycle;
 
+	// Percentage PackSendMe
+	public Double percentage_reshipping;
+	public Double percentage_rate_availability;
+
+
 }

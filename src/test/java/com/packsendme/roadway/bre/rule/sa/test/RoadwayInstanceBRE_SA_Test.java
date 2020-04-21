@@ -68,22 +68,26 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		// CarInstance_Model
 		carInstance.distance_max_car = 10.0;
 		carInstance.weight_max_car = 30.0;
-		carInstance.percentage_rate_availability_car = 20.5;
-
+		carInstance.percentage_reshipping = 20.5;
+		carInstance.percentage_rate_availability = 10.0;
+		
 		//Motorcycle_Model
 		motorcycleInstance.distance_max_motorcycle = 10.2;
 		motorcycleInstance.weight_max_motorcycle = 30.4;
-		motorcycleInstance.percentage_rate_availability_motorcycle = 20.3;
+		carInstance.percentage_reshipping = 20.5;
+		carInstance.percentage_rate_availability = 10.0;
 		
 		//Truck_Model
 		truckInstance.allow_cross_continent_truck = false;
 		truckInstance.weight_max_truck = 30.2;
-		truckInstance.percentage_rate_availability_truck = 20.5;
+		carInstance.percentage_reshipping = 20.5;
+		carInstance.percentage_rate_availability = 10.0;
 		
 		//Walking_Model
 		walkingInstance.distance_max_walking = 10.3;
 		walkingInstance.weight_max_walking = 30.2;
-		walkingInstance.percentage_rate_availability_walking = 20.4;
+		carInstance.percentage_reshipping = 20.5;
+		carInstance.percentage_rate_availability = 10.0;
 		
 		
 		ruleInstance.bicycle = bicycleInstance;
@@ -123,16 +127,12 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			// BicycleCosts_Model
 			bicycleCosts.cost_weight_bicycle = 10.0;
 			bicycleCosts.cost_distance_bicycle = 30.0;
-			bicycleCosts.percentage_reshipping_bicycle = 20.0;
-			bicycleCosts.percentage_rate_availability = 20.0;
 
 			// CarCosts_Model
 			carCosts.weight_cost = 0.50;
 			carCosts.distance_cost = 1.0 ;
 			carCosts.tolls_average_cost = 0.70;
 			carCosts.fuel_average_cost = 0.40;
-			carCosts.percentage_reshipping_bicycle = 0.40;
-			carCosts.percentage_rate_availability = 10.0;
 			carCosts.average_consumption_cost = 10.0;
 
 			//Motorcycle_Model
@@ -140,8 +140,6 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			motorcycleCosts.distance_cost = 0.60;
 			motorcycleCosts.tolls_average_cost = 0.60;
 			motorcycleCosts.fuel_average_cost = 0.60;
-			motorcycleCosts.percentage_reshipping_bicycle = 0.60;
-			motorcycleCosts.percentage_rate_availability = 0.60;
 			motorcycleCosts.average_consumption_cost = 10.0;
 
 			//Truck_Model
@@ -149,15 +147,11 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			truckCosts.distance_cost = 0.80;
 			truckCosts.tolls_average_cost = 10.0;
 			truckCosts.fuel_average_cost = 20.0;
-			truckCosts.percentage_reshipping_bicycle = 12.5;
-			truckCosts.percentage_rate_availability = 0.40;
 			truckCosts.average_consumption_cost = 10.0;
 			
 			//Walking_Model
 			walkingCosts.weight_cost = 2.40;
 			walkingCosts.distance_cost = 50.0;
-			walkingCosts.percentage_reshipping_bicycle = 1.20;
-			walkingCosts.percentage_rate_availability = 20.1;
 			
 			// BRE
 			ruleCosts.name_country = country;
@@ -194,8 +188,6 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		}
 		return countryL;
 	}
-
-	
 
 	void inputJsonFileSouthAmerica(String jsonSouthAmerica) throws IOException, URISyntaxException {
 		ObjectMapper mapper = new ObjectMapper();
