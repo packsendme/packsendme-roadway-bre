@@ -18,5 +18,9 @@ public class WalkingInstance_Model implements Serializable {
 	
 	public Double distance_max_walking;
 	public Double weight_max_walking;
-	public Double percentage_rate_availability_walking;
+
+
+	// Percentage PackSendMe
+	public Double percentage_reshipping;
+	public Double percentage_rate_availability;
 }

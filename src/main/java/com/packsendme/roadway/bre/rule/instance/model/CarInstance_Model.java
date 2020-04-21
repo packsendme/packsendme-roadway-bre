@@ -18,5 +18,8 @@ public class CarInstance_Model implements Serializable {
 	
 	public Double distance_max_car;
 	public Double weight_max_car;
-	public Double percentage_rate_availability_car;		
+	
+	// Percentage PackSendMe
+	public Double percentage_reshipping;
+	public Double percentage_rate_availability;
 }

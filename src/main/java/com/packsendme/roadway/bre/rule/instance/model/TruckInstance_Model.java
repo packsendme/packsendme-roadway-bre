@@ -18,5 +18,8 @@ public class TruckInstance_Model implements Serializable {
 
 	public boolean allow_cross_continent_truck;
 	public Double weight_max_truck;
-	public Double percentage_rate_availability_truck;
+
+	// Percentage PackSendMe
+	public Double percentage_reshipping;
+	public Double percentage_rate_availability;
 }

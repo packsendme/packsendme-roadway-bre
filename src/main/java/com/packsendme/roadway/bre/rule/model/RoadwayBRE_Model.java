@@ -29,6 +29,5 @@ public class RoadwayBRE_Model implements Serializable {
 	public String status;
 	
 	public RuleInstance_Model ruleInstance = new RuleInstance_Model();
-	//public ArrayList<RuleCosts_Model> ruleCosts = new ArrayList<RuleCosts_Model>();
 	public Map<String, RuleCosts_Model> ruleCosts = new HashMap<String, RuleCosts_Model>();
 }
