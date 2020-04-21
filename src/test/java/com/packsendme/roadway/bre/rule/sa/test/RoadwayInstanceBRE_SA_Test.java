@@ -63,7 +63,8 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		// BicycleInstance_Model
 		bicycleInstance.distance_max_bicycle = 10.0;
 		bicycleInstance.weight_max_bicycle = 30.0;
-		bicycleInstance.percentage_rate_availability_bicycle = 20.0;
+		bicycleInstance.percentage_reshipping = 20.5;
+		bicycleInstance.percentage_rate_availability = 10.0;
 		
 		// CarInstance_Model
 		carInstance.distance_max_car = 10.0;
@@ -74,20 +75,20 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		//Motorcycle_Model
 		motorcycleInstance.distance_max_motorcycle = 10.2;
 		motorcycleInstance.weight_max_motorcycle = 30.4;
-		carInstance.percentage_reshipping = 20.5;
-		carInstance.percentage_rate_availability = 10.0;
+		motorcycleInstance.percentage_reshipping = 20.5;
+		motorcycleInstance.percentage_rate_availability = 10.0;
 		
 		//Truck_Model
 		truckInstance.allow_cross_continent_truck = false;
 		truckInstance.weight_max_truck = 30.2;
-		carInstance.percentage_reshipping = 20.5;
-		carInstance.percentage_rate_availability = 10.0;
+		truckInstance.percentage_reshipping = 20.5;
+		truckInstance.percentage_rate_availability = 10.0;
 		
 		//Walking_Model
 		walkingInstance.distance_max_walking = 10.3;
 		walkingInstance.weight_max_walking = 30.2;
-		carInstance.percentage_reshipping = 20.5;
-		carInstance.percentage_rate_availability = 10.0;
+		walkingInstance.percentage_reshipping = 20.5;
+		walkingInstance.percentage_rate_availability = 10.0;
 		
 		
 		ruleInstance.bicycle = bicycleInstance;
