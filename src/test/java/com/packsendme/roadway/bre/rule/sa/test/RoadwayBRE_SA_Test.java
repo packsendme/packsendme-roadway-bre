@@ -52,7 +52,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		roadwayBRE.status = "Active";
 		
 		Map<String, RuleInstance_Model> ruleInstanceL = generateRuleInstance();
-		Map<String,Map> ruleCostsL = generateRuleCosts();
+		Map<String,Map<String, RuleCosts_Model>> ruleCostsL = generateRuleCosts();
 		
 		roadwayBRE.ruleInstance = ruleInstanceL;
 		roadwayBRE.ruleCosts = ruleCostsL;
@@ -99,9 +99,9 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		return ruleInstanceL;
 	}
 
-	Map<String, Map> generateRuleCosts() {
+	Map<String, Map<String, RuleCosts_Model>> generateRuleCosts() {
 		RuleCosts_Model ruleCosts = null;
-		Map<String,Map> costsL = new HashMap<String,Map>();
+		Map<String,Map<String, RuleCosts_Model>> costsL = new HashMap<String,Map<String, RuleCosts_Model>>();
 		
 		List<String> countryL = getCountry();
 		List<String> wayL = getWay();
