@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.packsendme.roadway.bre.rule.costs.model.RuleCosts_Model;
 import com.packsendme.roadway.bre.rule.instance.model.RuleInstance_Model;
 
 import lombok.Getter;
@@ -23,11 +22,8 @@ public class RoadwayBRE_Model implements Serializable {
 	public String name_rule;
 	public Date date_creation;
 	public String date_change;
-	public String unity_measurement_weight;
-	public String unity_measurement_distance;
-	public String currency_cost;
 	public String status;
 	
-	public RuleInstance_Model ruleInstance = new RuleInstance_Model();
-	public Map<String, RuleCosts_Model> ruleCosts = new HashMap<String, RuleCosts_Model>();
+	public Map<String, RuleInstance_Model> ruleInstance = new HashMap<String, RuleInstance_Model>();
+	public Map<String,Map> ruleCosts = new HashMap<String, Map>();
 }
