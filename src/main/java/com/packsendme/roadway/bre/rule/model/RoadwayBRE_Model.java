@@ -22,6 +22,7 @@ public class RoadwayBRE_Model implements Serializable {
 	public String name_rule;
 	public Date date_creation;
 	public String date_change;
+	public Double rate_reshipping;
 	public String status;
 	
 	public Map<String, RuleInstance_Model> ruleInstance = new HashMap<String, RuleInstance_Model>();

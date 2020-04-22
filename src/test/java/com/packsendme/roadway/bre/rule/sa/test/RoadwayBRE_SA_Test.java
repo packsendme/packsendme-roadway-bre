@@ -48,6 +48,7 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		roadwayBRE.name_rule = name_rule;
 		roadwayBRE.date_creation = new Date();
 		roadwayBRE.date_change = null;
+		roadwayBRE.rate_reshipping = 100.0;
 		roadwayBRE.status = "Active";
 		
 		Map<String, RuleInstance_Model> ruleInstanceL = generateRuleInstance();
@@ -110,19 +111,19 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			for(String way : wayL) {
 				
 				if(way.equals(Roadway_Constants.ROADWAY_BICYCLE)) {
-					ruleCosts = new RuleCosts_Model(5.50, 5.00, 0.00, 0.00, 0.00, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,40.0,0.0);
+					ruleCosts = new RuleCosts_Model(5.50, 5.00, 0.00, 0.00, 0.00, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_CAR)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,15.0,0.0);
+					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_MOTORCYCLE)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,15.0,0.0);
+					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_TRUCK)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,35.0,0.0);
+					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_WALKING)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,10.0,0.0);
+					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				costsCountryWayL.put(way,ruleCosts);
 				ruleCosts = new RuleCosts_Model();
