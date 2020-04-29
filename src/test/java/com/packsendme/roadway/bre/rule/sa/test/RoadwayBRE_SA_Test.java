@@ -38,8 +38,6 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	// Rule-Costs
 	RuleCosts_Model ruleCosts = new RuleCosts_Model();
 	
-	
-	
 	@Test
 	void generateJsonSouthAmerica() throws URISyntaxException, IOException {
 		RoadwayBRE_Model roadwayBRE = new RoadwayBRE_Model();
@@ -111,19 +109,19 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			for(String way : wayL) {
 				
 				if(way.equals(Roadway_Constants.ROADWAY_BICYCLE)) {
-					ruleCosts = new RuleCosts_Model(5.50, 5.00, 0.00, 0.00, 0.00, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_CAR)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.1, 0.10, 0.10, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_MOTORCYCLE)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.10, 0.10, 0.20, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_TRUCK)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.30, 0.15, 0.30, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_WALKING)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				costsCountryWayL.put(way,ruleCosts);
 				ruleCosts = new RuleCosts_Model();
