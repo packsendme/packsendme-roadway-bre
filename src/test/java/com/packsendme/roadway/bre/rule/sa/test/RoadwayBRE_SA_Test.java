@@ -38,8 +38,6 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	// Rule-Costs
 	RuleCosts_Model ruleCosts = new RuleCosts_Model();
 	
-	
-	
 	@Test
 	void generateJsonSouthAmerica() throws URISyntaxException, IOException {
 		RoadwayBRE_Model roadwayBRE = new RoadwayBRE_Model();
@@ -48,10 +46,11 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		roadwayBRE.name_rule = name_rule;
 		roadwayBRE.date_creation = new Date();
 		roadwayBRE.date_change = null;
+		roadwayBRE.rate_reshipping = 100.0;
 		roadwayBRE.status = "Active";
 		
 		Map<String, RuleInstance_Model> ruleInstanceL = generateRuleInstance();
-		Map<String,Map> ruleCostsL = generateRuleCosts();
+		Map<String,Map<String, RuleCosts_Model>> ruleCostsL = generateRuleCosts();
 		
 		roadwayBRE.ruleInstance = ruleInstanceL;
 		roadwayBRE.ruleCosts = ruleCostsL;
@@ -74,23 +73,23 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		for(String way : wayL) {
 			
 			if(way.equals(Roadway_Constants.ROADWAY_BICYCLE)) {
-				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_BICYCLE, 5.0, 5.0, false, 25.0, 0.0,
+				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_BICYCLE, 5.0, 5.0, false,
 						MetricUnitMeasurement_Constants.kilograma_UnitMeasurement,MetricUnitMeasurement_Constants.kilometro_UnitMeasurement);
 			}
 			else if(way.equals(Roadway_Constants.ROADWAY_CAR)) {
-				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_CAR, 8434.0, 200.0, false, 10.0, 0.0,
-												MetricUnitMeasurement_Constants.kilograma_UnitMeasurement,MetricUnitMeasurement_Constants.kilometro_UnitMeasurement);
+				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_BICYCLE, 8434.0, 200.0, false,
+						MetricUnitMeasurement_Constants.kilograma_UnitMeasurement,MetricUnitMeasurement_Constants.kilometro_UnitMeasurement);
 			}
 			else if(way.equals(Roadway_Constants.ROADWAY_MOTORCYCLE)) {
-				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_MOTORCYCLE, 8434.0, 100.0, false, 10.0, 0.0,
+				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_MOTORCYCLE, 8434.0, 100.0, false,
 						MetricUnitMeasurement_Constants.kilograma_UnitMeasurement,MetricUnitMeasurement_Constants.kilometro_UnitMeasurement);
 			}
 			else if(way.equals(Roadway_Constants.ROADWAY_TRUCK)) {
-				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_TRUCK, 8434.0, 14.0, false, 10.0, 0.0,
+				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_TRUCK, 8434.0, 14.0, false,
 						MetricUnitMeasurement_Constants.tonelada_UnitMeasurement,MetricUnitMeasurement_Constants.kilometro_UnitMeasurement);
 			}
 			else if(way.equals(Roadway_Constants.ROADWAY_WALKING)) {
-				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_WALKING, 2.0, 1.0, false, 30.0, 0.0,
+				ruleInstance_Model = new RuleInstance_Model(Roadway_Constants.ROADWAY_WALKING, 2.0, 1.0, false,
 						MetricUnitMeasurement_Constants.kilograma_UnitMeasurement,MetricUnitMeasurement_Constants.kilometro_UnitMeasurement);
 			}
 			ruleInstanceL.put(way, ruleInstance_Model);
@@ -98,9 +97,9 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 		return ruleInstanceL;
 	}
 
-	Map<String, Map> generateRuleCosts() {
+	Map<String, Map<String, RuleCosts_Model>> generateRuleCosts() {
 		RuleCosts_Model ruleCosts = null;
-		Map<String,Map> costsL = new HashMap<String,Map>();
+		Map<String,Map<String, RuleCosts_Model>> costsL = new HashMap<String,Map<String, RuleCosts_Model>>();
 		
 		List<String> countryL = getCountry();
 		List<String> wayL = getWay();
@@ -110,19 +109,19 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			for(String way : wayL) {
 				
 				if(way.equals(Roadway_Constants.ROADWAY_BICYCLE)) {
-					ruleCosts = new RuleCosts_Model(5.50, 5.00, 0.00, 0.00, 0.00, Currency_Constants.DOLLAR_CURRENCY_SYMBOL);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_CAR)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL);
+					ruleCosts = new RuleCosts_Model(0.1, 0.10, 0.10, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_MOTORCYCLE)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL);
+					ruleCosts = new RuleCosts_Model(0.10, 0.10, 0.20, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_TRUCK)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL);
+					ruleCosts = new RuleCosts_Model(0.30, 0.15, 0.30, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_WALKING)) {
-					ruleCosts = new RuleCosts_Model(1.50, 3.00, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
 				}
 				costsCountryWayL.put(way,ruleCosts);
 				ruleCosts = new RuleCosts_Model();
