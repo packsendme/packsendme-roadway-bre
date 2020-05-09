@@ -21,7 +21,7 @@ public class RoadwayBRE_Model implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	public String name_rule;
-	public Date date_creation;
+	public String date_creation;
 	public String date_change;
 	public Double rate_reshipping;
 	public String status;
