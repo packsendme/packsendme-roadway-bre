@@ -5,11 +5,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.SimpleFormatter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
@@ -42,9 +44,12 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 	void generateJsonSouthAmerica() throws URISyntaxException, IOException {
 		RoadwayBRE_Model roadwayBRE = new RoadwayBRE_Model();
 
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String dtNowS = sdf.format(new Date());
+		
 		// RoadwayModel
 		roadwayBRE.name_rule = name_rule;
-		roadwayBRE.date_creation = new Date();
+		roadwayBRE.date_creation = dtNowS;
 		roadwayBRE.date_change = null;
 		roadwayBRE.rate_reshipping = 100.0;
 		roadwayBRE.status = "Active";
