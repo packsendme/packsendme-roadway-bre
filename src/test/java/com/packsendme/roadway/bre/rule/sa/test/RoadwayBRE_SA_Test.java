@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.SimpleFormatter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
@@ -114,19 +113,19 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			for(String way : wayL) {
 				
 				if(way.equals(Roadway_Constants.ROADWAY_BICYCLE)) {
-					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.00, 12.50, 4.50, 0.0,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_CAR)) {
-					ruleCosts = new RuleCosts_Model(0.1, 0.10, 0.10, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.1, 0.10, 0.10, 10.00, 12.50, 4.50, 0.0,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_MOTORCYCLE)) {
-					ruleCosts = new RuleCosts_Model(0.10, 0.10, 0.20, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.10, 0.10, 0.20, 10.00, 12.50, 4.50, 0.0,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_TRUCK)) {
-					ruleCosts = new RuleCosts_Model(0.30, 0.15, 0.30, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.30, 0.15, 0.30, 10.00, 12.50, 4.50, 0.0,0.0);
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_WALKING)) {
-					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.00, 12.50, 4.50, Currency_Constants.DOLLAR_CURRENCY_SYMBOL,0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.00, 12.50, 4.50, 0.0,0.0);
 				}
 				costsCountryWayL.put(way,ruleCosts);
 				ruleCosts = new RuleCosts_Model();
