@@ -113,19 +113,19 @@ import com.packsendme.roadway.bre.rule.model.RoadwayBRE_Model;
 			for(String way : wayL) {
 				
 				if(way.equals(Roadway_Constants.ROADWAY_BICYCLE)) {
-					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 0.0, 3.50, 0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 0.0, 4.50, "R$");
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_CAR)) {
-					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.0, 3.50, 0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.0, 4.50, "R$");
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_MOTORCYCLE)) {
-					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.0, 3.50, 0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 10.0, 4.50, "R$");
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_TRUCK)) {
-					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 8.0, 3.50, 0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 8.0, 4.50, "R$");
 				}
 				else if(way.equals(Roadway_Constants.ROADWAY_WALKING)) {
-					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 0.0, 3.50, 0.0);
+					ruleCosts = new RuleCosts_Model(0.20, 0.30, 0.40, 0.0, 4.50, "R$");
 				}
 				costsCountryWayL.put(way,ruleCosts);
 				ruleCosts = new RuleCosts_Model();
