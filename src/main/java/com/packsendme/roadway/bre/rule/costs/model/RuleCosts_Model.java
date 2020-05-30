@@ -20,21 +20,17 @@ public class RuleCosts_Model implements Serializable {
 	public Double worktime_cost;
 	public Double average_consumption_cost;
 	public Double rate_exchange;
-	
-	// Percentage 
-	public Double rate_availability;
-
-
+	public String current_exchange;
 	
 	public RuleCosts_Model(Double weight_cost, Double distance_cost, Double worktime_cost, Double average_consumption_cost,
-			Double rate_exchange, Double rate_availability) {
+			Double rate_exchange, String current_exchange) {
 		super();
 		this.weight_cost = weight_cost;
 		this.distance_cost = distance_cost;
 		this.worktime_cost = worktime_cost;
 		this.average_consumption_cost = average_consumption_cost;
 		this.rate_exchange = rate_exchange;
-		this.rate_availability = rate_availability;
+		this.current_exchange = current_exchange;
 	}
 
 	public RuleCosts_Model() {
