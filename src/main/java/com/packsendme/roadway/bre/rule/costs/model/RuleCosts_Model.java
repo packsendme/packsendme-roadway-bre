@@ -18,6 +18,7 @@ public class RuleCosts_Model implements Serializable {
 	public Double weight_cost;
 	public Double distance_cost;
 	public Double worktime_cost;
+	
 	public Double average_consumption_cost;
 	public Double rate_exchange;
 	public String current_exchange;
