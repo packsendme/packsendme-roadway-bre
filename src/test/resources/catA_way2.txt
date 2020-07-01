@@ -1,10 +1,3 @@
-Bicycle
-Car
-Motorcycle
-Walking
-Van
-Furgao
-Picape
 Urbano VUC
 Toco
 Truck

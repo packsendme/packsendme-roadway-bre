@@ -1,4 +1,4 @@
-package com.packsendme.roadway.bre.rule.costs.model;
+package com.packsendme.roadway.bre.model.businessrule;
 
 import java.io.Serializable;
 
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class RuleCosts_Model implements Serializable {
+public class VehicleCosts_Model implements Serializable {
 	
 	/**
 	 * 
@@ -18,12 +18,12 @@ public class RuleCosts_Model implements Serializable {
 	public Double weight_cost;
 	public Double distance_cost;
 	public Double worktime_cost;
-	
 	public Double average_consumption_cost;
+	
 	public Double rate_exchange;
 	public String current_exchange;
 	
-	public RuleCosts_Model(Double weight_cost, Double distance_cost, Double worktime_cost, Double average_consumption_cost,
+	public VehicleCosts_Model(Double weight_cost, Double distance_cost, Double worktime_cost, Double average_consumption_cost,
 			Double rate_exchange, String current_exchange) {
 		super();
 		this.weight_cost = weight_cost;
@@ -34,7 +34,7 @@ public class RuleCosts_Model implements Serializable {
 		this.current_exchange = current_exchange;
 	}
 
-	public RuleCosts_Model() {
+	public VehicleCosts_Model() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
