@@ -5,9 +5,9 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class VehicleBodyWork_Model {
+public class BodyworkBRE {
 	
-	public String name;
+	public String bodyWork;
 	public String type;
 	
 

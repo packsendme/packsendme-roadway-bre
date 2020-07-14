@@ -6,14 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.packsendme.roadway.bre.model.vehicle.Vehicle_Model;
+import com.packsendme.roadway.bre.model.vehicle.VehicleBRE;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter 
 @Setter 
-public class BusinessRuleRoadway_Model implements Serializable {
+public class BusinessRuleRoadwayBRE implements Serializable {
 	
 	/**
 	 * 
@@ -26,13 +26,13 @@ public class BusinessRuleRoadway_Model implements Serializable {
 	public String date_change;
 	public String status;
 	
-	public List<Vehicle_Model> vehicleInstance = new ArrayList<Vehicle_Model>();
-	public Map<String,Map<String, VehicleCosts_Model>> vehicleCosts = new HashMap<String, Map<String, VehicleCosts_Model>>();
+	public List<VehicleBRE> vehicleInstance = new ArrayList<VehicleBRE>();
+	public Map<String,Map<String, VehicleCostsBRE>> vehicleCosts = new HashMap<String, Map<String, VehicleCostsBRE>>();
 	
 	
-	public BusinessRuleRoadway_Model(String rule_name, String category_name, String date_creation, String date_change,
-			String status, List<Vehicle_Model> vehicleInstance,
-			Map<String, Map<String, VehicleCosts_Model>> vehicleCosts) {
+	public BusinessRuleRoadwayBRE(String rule_name, String category_name, String date_creation, String date_change,
+			String status, List<VehicleBRE> vehicleInstance,
+			Map<String, Map<String, VehicleCostsBRE>> vehicleCosts) {
 		super();
 		this.rule_name = rule_name;
 		this.category_name = category_name;
@@ -44,7 +44,7 @@ public class BusinessRuleRoadway_Model implements Serializable {
 	}
 
 
-	public BusinessRuleRoadway_Model() {
+	public BusinessRuleRoadwayBRE() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

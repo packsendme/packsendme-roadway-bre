@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class Location_Model implements Serializable{
+public class LocationBRE implements Serializable{
 
 	/**
 	 * 

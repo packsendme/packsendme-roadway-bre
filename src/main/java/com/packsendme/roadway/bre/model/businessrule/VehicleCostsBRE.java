@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class VehicleCosts_Model implements Serializable {
+public class VehicleCostsBRE implements Serializable {
 	
 	/**
 	 * 
@@ -23,7 +23,7 @@ public class VehicleCosts_Model implements Serializable {
 	public Double rate_exchange;
 	public String current_exchange;
 	
-	public VehicleCosts_Model(Double weight_cost, Double distance_cost, Double worktime_cost, Double average_consumption_cost,
+	public VehicleCostsBRE(Double weight_cost, Double distance_cost, Double worktime_cost, Double average_consumption_cost,
 			Double rate_exchange, String current_exchange) {
 		super();
 		this.weight_cost = weight_cost;
@@ -34,7 +34,7 @@ public class VehicleCosts_Model implements Serializable {
 		this.current_exchange = current_exchange;
 	}
 
-	public VehicleCosts_Model() {
+	public VehicleCostsBRE() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

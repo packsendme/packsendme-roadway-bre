@@ -9,22 +9,22 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class Vehicle_Model implements Serializable{
+public class VehicleBRE implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public VehicleType_Model vehicle;
-	public List<VehicleBodyWork_Model> bodywork_vehicle = new ArrayList<VehicleBodyWork_Model>();
+	public String vehicle;
+	public List<String> bodywork_vehicle = new ArrayList<String>();
 	public Double cargo_max;
 	public Integer axis_total;
 	public String unity_measurement_weight;
 	public Integer people;
 	
 	
-	public Vehicle_Model(VehicleType_Model vehicle, List<VehicleBodyWork_Model> bodywork_vehicle, Double cargo_max,
+	public VehicleBRE(String vehicle, List<String> bodywork_vehicle, Double cargo_max,
 			Integer axis_total, String unity_measurement_weight, Integer people) {
 		super();
 		this.vehicle = vehicle;
@@ -35,7 +35,7 @@ public class Vehicle_Model implements Serializable{
 		this.people = people;
 	}
 
-	public Vehicle_Model() {
+	public VehicleBRE() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

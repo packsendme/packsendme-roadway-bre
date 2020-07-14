@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter
-public class VehicleType_Model implements Serializable{
+public class VehicleTypeBRE implements Serializable{
 
 	/**
 	 * 
