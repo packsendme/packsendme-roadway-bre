@@ -18,10 +18,9 @@ import org.springframework.util.Assert;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.lib.common.constants.generic.MetricUnitMeasurement_Constants;
 import com.packsendme.lib.common.constants.way.Roadway_SA_Constants;
-import com.packsendme.roadway.bre.model.businessrule.BusinessRuleRoadwayBRE;
-import com.packsendme.roadway.bre.model.businessrule.VehicleCostsBRE;
+import com.packsendme.roadway.bre.model.businessrule.CostsBRE;
+import com.packsendme.roadway.bre.model.businessrule.RoadwayBRE;
 import com.packsendme.roadway.bre.model.category.CategoryBRE;
-import com.packsendme.roadway.bre.model.vehicle.BodyworkBRE;
 import com.packsendme.roadway.bre.model.vehicle.VehicleBRE;
 import com.packsendme.roadway.bre.model.vehicle.VehicleTypeBRE;
 
@@ -37,7 +36,7 @@ public class RoadwayBRE_CatC_SA {
 	// Rule-Instance
 	VehicleBRE ruleInstance = new VehicleBRE();
 	// Rule-Costs
-	VehicleCostsBRE ruleCosts = new VehicleCostsBRE();
+	CostsBRE ruleCosts = new CostsBRE();
 	
 	
 	/*===============================================================================================================================
@@ -47,19 +46,19 @@ public class RoadwayBRE_CatC_SA {
 	
 	@Test
 	void getBusinessRule() throws URISyntaxException, IOException {
-		BusinessRuleRoadwayBRE roadwayBRE = new BusinessRuleRoadwayBRE();
-
+		RoadwayBRE roadwayBRE = new RoadwayBRE();
+		CategoryBRE_CatC_SA catTestC = new CategoryBRE_CatC_SA();
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String dtNowS = sdf.format(new Date());
 		
 		// RoadwayModel-CATEGORY (C)
 		roadwayBRE.rule_name = name_rule;
-		roadwayBRE.category_name = Roadway_SA_Constants.ROADWAY_CATEGORY_C;
-		roadwayBRE.date_creation = dtNowS;
+ 		roadwayBRE.date_creation = dtNowS;
 		roadwayBRE.date_change = null;
 		roadwayBRE.status = "Active";
-		roadwayBRE.vehicleInstance = getVehicleInstance();
-		roadwayBRE.vehicleCosts = getVehicleCosts();
+		roadwayBRE.category = catTestC.getCategoryBRE();
+		roadwayBRE.costs = getVehicleCosts();
 		
 		ObjectMapper mapper = new ObjectMapper();
 		jsonSouthAmerica = mapper.writeValueAsString(roadwayBRE);
@@ -133,28 +132,28 @@ public class RoadwayBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	Map<String, Map<String, VehicleCostsBRE>> getVehicleCosts() {
-		VehicleCostsBRE ruleCosts = null;
-		Map<String,Map<String, VehicleCostsBRE>> costsL = new HashMap<String,Map<String, VehicleCostsBRE>>();
+	Map<String, Map<String, CostsBRE>> getVehicleCosts() {
+		CostsBRE ruleCosts = null;
+		Map<String,Map<String, CostsBRE>> costsL = new HashMap<String,Map<String, CostsBRE>>();
 		
 		List<String> countryL = getCountry();
 		List<String> wayL = getWay();
-		Map<String, VehicleCostsBRE> costsCountryWayL = new HashMap<String,VehicleCostsBRE>();
+		Map<String, CostsBRE> costsCountryWayL = new HashMap<String,CostsBRE>();
 		
 		for(String country : countryL) {
 			for(String way : wayL) {
 				
 				if(way.equals(Roadway_SA_Constants.ROADWAY_URBANO)) {
-					ruleCosts = new VehicleCostsBRE(0.20, 0.30, 0.40, 0.0, 4.50, "R$");
+					ruleCosts = new CostsBRE(0.20, 0.30, 0.40, 0.0, 4.50, "R$");
 				}
 				else if(way.equals(Roadway_SA_Constants.ROADWAY_TOCO12)) {
-					ruleCosts = new VehicleCostsBRE(0.20, 0.30, 0.40, 10.0, 4.50, "R$");
+					ruleCosts = new CostsBRE(0.20, 0.30, 0.40, 10.0, 4.50, "R$");
 				}
 				else if(way.equals(Roadway_SA_Constants.ROADWAY_TOCO16)) {
-					ruleCosts = new VehicleCostsBRE(0.20, 0.30, 0.40, 0.0, 4.50, "R$");
+					ruleCosts = new CostsBRE(0.20, 0.30, 0.40, 0.0, 4.50, "R$");
 				}
 				costsCountryWayL.put(way,ruleCosts);
-				ruleCosts = new VehicleCostsBRE();
+				ruleCosts = new CostsBRE();
 			}
 			costsL.put(country, costsCountryWayL);
 		}
@@ -212,7 +211,7 @@ public class RoadwayBRE_CatC_SA {
 		File file = new File(url_json);
 		if (file.length() != 0) {
 			String absolutePath = file.getAbsolutePath();
-			BusinessRuleRoadwayBRE obj = mapper.readValue(new File(absolutePath), BusinessRuleRoadwayBRE.class);
+			RoadwayBRE obj = mapper.readValue(new File(absolutePath), RoadwayBRE.class);
 			Assert.notNull(obj);
 		}
 		else {
