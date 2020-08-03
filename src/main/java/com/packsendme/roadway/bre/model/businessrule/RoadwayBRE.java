@@ -22,19 +22,19 @@ public class RoadwayBRE implements Serializable {
 	public String date_creation;
 	public String date_change;
 	public String status;
-	public CategoryBRE category;
-	public Map<String,Map<String, CostsBRE>> costs = new HashMap<String, Map<String, CostsBRE>>();
+	public CategoryBRE categoryInstance;
+	public Map<String,Map<String, CostsBRE>> costsInstance = new HashMap<String, Map<String, CostsBRE>>();
 	
 	
 	public RoadwayBRE(String rule_name, String date_creation, String date_change, String status,
-			CategoryBRE category, Map<String, Map<String, CostsBRE>> costs) {
+			CategoryBRE categoryInstance, Map<String, Map<String, CostsBRE>> costsInstance) {
 		super();
 		this.rule_name = rule_name;
 		this.date_creation = date_creation;
 		this.date_change = date_change;
 		this.status = status;
-		this.category = category;
-		this.costs = costs;
+		this.categoryInstance = categoryInstance;
+		this.costsInstance = costsInstance;
 	}
 
 

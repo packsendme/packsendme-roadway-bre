@@ -57,8 +57,8 @@ public class RoadwayBRE_CatC_SA {
  		roadwayBRE.date_creation = dtNowS;
 		roadwayBRE.date_change = null;
 		roadwayBRE.status = "Active";
-		roadwayBRE.category = catTestC.getCategoryBRE();
-		roadwayBRE.costs = getVehicleCosts();
+		roadwayBRE.categoryInstance = catTestC.getCategoryBRE();
+		roadwayBRE.costsInstance = getVehicleCosts();
 		
 		ObjectMapper mapper = new ObjectMapper();
 		jsonSouthAmerica = mapper.writeValueAsString(roadwayBRE);
