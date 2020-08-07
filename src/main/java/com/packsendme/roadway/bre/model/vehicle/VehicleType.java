@@ -6,15 +6,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter 
-@Setter 
-public class BodyworkBRE  implements Serializable{
-	
+@Setter
+public class VehicleType implements Serializable{
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public String bodyWork;
-	public String type;
 	
-
+	public String type_vehicle;
 }

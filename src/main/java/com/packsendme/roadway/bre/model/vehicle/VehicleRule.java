@@ -9,7 +9,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class VehicleBRE implements Serializable{
+public class VehicleRule implements Serializable{
 
 	/**
 	 * 
@@ -24,7 +24,7 @@ public class VehicleBRE implements Serializable{
 	public Integer people;
 	
 	
-	public VehicleBRE(String vehicle, List<String> bodywork_vehicle, Double cargo_max,
+	public VehicleRule(String vehicle, List<String> bodywork_vehicle, Double cargo_max,
 			Integer axis_total, String unity_measurement_weight, Integer people) {
 		super();
 		this.vehicle = vehicle;
@@ -35,7 +35,7 @@ public class VehicleBRE implements Serializable{
 		this.people = people;
 	}
 
-	public VehicleBRE() {
+	public VehicleRule() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

@@ -5,14 +5,17 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.lib.common.constants.generic.MetricUnitMeasurement_Constants;
 import com.packsendme.lib.common.constants.way.Roadway_SA_Constants;
-import com.packsendme.roadway.bre.model.category.CategoryBRE;
-import com.packsendme.roadway.bre.model.vehicle.VehicleBRE;
-import com.packsendme.roadway.bre.model.vehicle.VehicleTypeBRE;
+import com.packsendme.roadway.bre.model.category.CategoryRule;
+import com.packsendme.roadway.bre.model.category.CategoryType;
+import com.packsendme.roadway.bre.model.location.Location;
+import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
+import com.packsendme.roadway.bre.model.vehicle.VehicleType;
 
 public class CategoryBRE_CatC_SA {
 	
@@ -20,11 +23,14 @@ public class CategoryBRE_CatC_SA {
 	 *  V E H I C L E 
 	 *===============================================================================================================================
 	 */
-	//@Test
-	CategoryBRE getCategoryBRE() throws URISyntaxException, IOException {
+	@Test
+	CategoryRule getCategory_C_Rule() throws URISyntaxException, IOException {
 
-		CategoryBRE categoryBRE = new CategoryBRE("Cat_C",getVehicle(),3.0,6.0,2,MetricUnitMeasurement_Constants.tonelada_UnitMeasurement,
-				MetricUnitMeasurement_Constants.tonelada_UnitMeasurement);
+		CategoryType categoryType = new CategoryType();
+		categoryType.typeCategory = "Semi-Pesado";
+		
+		CategoryRule categoryBRE = new CategoryRule("Cat_C",categoryType, getLocation(), 3.0,6.0,2,MetricUnitMeasurement_Constants.tonelada_UnitMeasurement,
+				MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, getVehicle());
 				
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonSouthAmerica = mapper.writeValueAsString(categoryBRE);
@@ -33,12 +39,12 @@ public class CategoryBRE_CatC_SA {
    		return categoryBRE;
 	}
 	
-	public List<VehicleBRE> getVehicle() {
-		List<VehicleBRE> vehicleL = new ArrayList<VehicleBRE>(); 
+	public List<VehicleRule> getVehicle() {
+		List<VehicleRule> vehicleL = new ArrayList<VehicleRule>(); 
 		List<String> bodyworkL = getBodyWork();
-		VehicleBRE vehicle_model1 = new VehicleBRE(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
-		VehicleBRE vehicle_model2 = new VehicleBRE(getVehicleType(2).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
-		VehicleBRE vehicle_model3 = new VehicleBRE(getVehicleType(3).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		VehicleRule vehicle_model1 = new VehicleRule(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		VehicleRule vehicle_model2 = new VehicleRule(getVehicleType(2).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		VehicleRule vehicle_model3 = new VehicleRule(getVehicleType(3).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
 		vehicleL.add(vehicle_model1);
 		vehicleL.add(vehicle_model2);
 		vehicleL.add(vehicle_model3);
@@ -56,8 +62,8 @@ public class CategoryBRE_CatC_SA {
 	}
 	
 	
-	public VehicleTypeBRE getVehicleType(int type) {
-		VehicleTypeBRE vehicleType = new VehicleTypeBRE();
+	public VehicleType getVehicleType(int type) {
+		VehicleType vehicleType = new VehicleType();
 		
 		if(type == 1) {
 			vehicleType.type_vehicle = Roadway_SA_Constants.ROADWAY_URBANO;
@@ -69,6 +75,16 @@ public class CategoryBRE_CatC_SA {
 			vehicleType.type_vehicle = Roadway_SA_Constants.ROADWAY_TOCO16;
 		} 
 		return vehicleType;
+	}
+	
+	/*===============================================================================================================================
+	 *  LOCATION
+	 *===============================================================================================================================
+	 */
+	
+	public Location getLocation() {
+		Location locationObj = new Location("Brazil","","","");
+		return locationObj;
 	}
 
 }

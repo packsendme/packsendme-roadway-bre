@@ -18,11 +18,13 @@ import org.springframework.util.Assert;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.lib.common.constants.generic.MetricUnitMeasurement_Constants;
 import com.packsendme.lib.common.constants.way.Roadway_SA_Constants;
-import com.packsendme.roadway.bre.model.businessrule.CostsBRE;
+import com.packsendme.roadway.bre.model.businessrule.CategoryBRE;
 import com.packsendme.roadway.bre.model.businessrule.RoadwayBRE;
-import com.packsendme.roadway.bre.model.category.CategoryBRE;
-import com.packsendme.roadway.bre.model.vehicle.VehicleBRE;
-import com.packsendme.roadway.bre.model.vehicle.VehicleTypeBRE;
+import com.packsendme.roadway.bre.model.category.CategoryCosts;
+import com.packsendme.roadway.bre.model.location.Location;
+import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
+import com.packsendme.roadway.bre.model.vehicle.VehicleType;
+
 
 public class RoadwayBRE_CatC_SA {
 
@@ -34,9 +36,11 @@ public class RoadwayBRE_CatC_SA {
 	private final String name_rule = "RoadwayCatC-SouthAmerica-BRE";
 
 	// Rule-Instance
-	VehicleBRE ruleInstance = new VehicleBRE();
+	VehicleRule ruleInstance = new VehicleRule();
 	// Rule-Costs
-	CostsBRE ruleCosts = new CostsBRE();
+	CategoryCosts ruleCosts = new CategoryCosts();
+	
+
 	
 	
 	/*===============================================================================================================================
@@ -45,10 +49,9 @@ public class RoadwayBRE_CatC_SA {
 	*/
 	
 	@Test
-	void getBusinessRule() throws URISyntaxException, IOException {
+	void getBusinessRule() throws URISyntaxException, IOException{
 		RoadwayBRE roadwayBRE = new RoadwayBRE();
-		CategoryBRE_CatC_SA catTestC = new CategoryBRE_CatC_SA();
-		
+	
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String dtNowS = sdf.format(new Date());
 		
@@ -57,9 +60,7 @@ public class RoadwayBRE_CatC_SA {
  		roadwayBRE.date_creation = dtNowS;
 		roadwayBRE.date_change = null;
 		roadwayBRE.status = "Active";
-		roadwayBRE.categoryInstance = catTestC.getCategoryBRE();
-		roadwayBRE.costsInstance = getVehicleCosts();
-		
+		roadwayBRE.category = getCategory();
 		ObjectMapper mapper = new ObjectMapper();
 		jsonSouthAmerica = mapper.writeValueAsString(roadwayBRE);
 		System.out.println(jsonSouthAmerica);
@@ -72,10 +73,12 @@ public class RoadwayBRE_CatC_SA {
 	 *=============================================================================================================================== 
 	 */
 
-	public CategoryBRE getCategory() {
-		CategoryBRE categoryC = new CategoryBRE(Roadway_SA_Constants.ROADWAY_CATEGORY_C, getVehicleInstance(), 1.500, 6.0, 2, 
-				MetricUnitMeasurement_Constants.kilograma_UnitMeasurement, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement); 
-		return categoryC;
+	public CategoryBRE getCategory() throws URISyntaxException, IOException {
+		CategoryBRE category = new CategoryBRE();
+		CategoryBRE_CatC_SA catTestC = new CategoryBRE_CatC_SA();
+		category.categoryRule = catTestC.getCategory_C_Rule();
+		category.categoryCosts = getVehicleCosts();
+		return category;
 	}
 
 	/*===============================================================================================================================
@@ -83,17 +86,17 @@ public class RoadwayBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	public List<VehicleBRE> getVehicleInstance() {
-		VehicleBRE vehicle_model1 = new VehicleBRE();
-		VehicleBRE vehicle_model2 = new VehicleBRE();
-		VehicleBRE vehicle_model3 = new VehicleBRE();
-		List<VehicleBRE> vehicleL = new ArrayList<VehicleBRE>();
+	public List<VehicleRule> getVehicleInstance() {
+		VehicleRule vehicle_model1 = new VehicleRule();
+		VehicleRule vehicle_model2 = new VehicleRule();
+		VehicleRule vehicle_model3 = new VehicleRule();
+		List<VehicleRule> vehicleL = new ArrayList<VehicleRule>();
 
 		List<String> bodyworkL = getBodyWork();
 		
-		vehicle_model1 = new VehicleBRE(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
-		vehicle_model2 = new VehicleBRE(getVehicleType(2).type_vehicle, bodyworkL, 12.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
-		vehicle_model3 = new VehicleBRE(getVehicleType(3).type_vehicle, bodyworkL, 16.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		vehicle_model1 = new VehicleRule(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		vehicle_model2 = new VehicleRule(getVehicleType(2).type_vehicle, bodyworkL, 12.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		vehicle_model3 = new VehicleRule(getVehicleType(3).type_vehicle, bodyworkL, 16.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
 		
 		vehicleL.add(vehicle_model1);
 		vehicleL.add(vehicle_model2);
@@ -102,8 +105,8 @@ public class RoadwayBRE_CatC_SA {
 		return vehicleL;
 	}
 	
-	public VehicleTypeBRE getVehicleType(int type) {
-		VehicleTypeBRE vehicleType = new VehicleTypeBRE();
+	public VehicleType getVehicleType(int type) {
+		VehicleType vehicleType = new VehicleType();
 		
 		if(type == 1) {
 			vehicleType.type_vehicle = Roadway_SA_Constants.ROADWAY_URBANO;
@@ -126,40 +129,53 @@ public class RoadwayBRE_CatC_SA {
 		bodywork_vehicleL.add(Roadway_SA_Constants.BODYWORK_GRADE_BAIXA);
 		return bodywork_vehicleL;
 	}
+
+	/*===============================================================================================================================
+	 *  LOCATION
+	 *===============================================================================================================================
+	 */
+	
+	public Location getLocation() {
+		Location locationObj = new Location("Brazil","","","");
+		return locationObj;
+	}
+	
+	
+
 	
 	/*===============================================================================================================================
 	 *  V E H I C L E - C O S T S 
 	 *===============================================================================================================================
 	 */
 	
-	Map<String, Map<String, CostsBRE>> getVehicleCosts() {
-		CostsBRE ruleCosts = null;
-		Map<String,Map<String, CostsBRE>> costsL = new HashMap<String,Map<String, CostsBRE>>();
+	Map<String, Map<String, CategoryCosts>> getVehicleCosts() {
+		CategoryCosts ruleCosts = null;
+		Map<String,Map<String, CategoryCosts>> costsL = new HashMap<String,Map<String, CategoryCosts>>();
 		
 		List<String> countryL = getCountry();
 		List<String> wayL = getWay();
-		Map<String, CostsBRE> costsCountryWayL = new HashMap<String,CostsBRE>();
+		Map<String, CategoryCosts> costsCountryWayL = new HashMap<String,CategoryCosts>();
 		
 		for(String country : countryL) {
 			for(String way : wayL) {
 				
 				if(way.equals(Roadway_SA_Constants.ROADWAY_URBANO)) {
-					ruleCosts = new CostsBRE(0.20, 0.30, 0.40, 0.0, 4.50, "R$");
+					ruleCosts = new CategoryCosts(getLocation(),"Cat_C","Roadway_SA_Constants.ROADWAY_URBANO",0.20, 0.30, 0.40, 0.0, 4.50, "R$");
 				}
 				else if(way.equals(Roadway_SA_Constants.ROADWAY_TOCO12)) {
-					ruleCosts = new CostsBRE(0.20, 0.30, 0.40, 10.0, 4.50, "R$");
+					ruleCosts = new CategoryCosts(getLocation(),"Cat_C","Roadway_SA_Constants.ROADWAY_TOCO12",0.20, 0.30, 0.40, 10.0, 4.50, "R$");
 				}
 				else if(way.equals(Roadway_SA_Constants.ROADWAY_TOCO16)) {
-					ruleCosts = new CostsBRE(0.20, 0.30, 0.40, 0.0, 4.50, "R$");
+					ruleCosts = new CategoryCosts(getLocation(),"Cat_C","Roadway_SA_Constants.ROADWAY_TOCO12",0.20, 0.30, 0.40, 0.0, 4.50, "R$");
 				}
 				costsCountryWayL.put(way,ruleCosts);
-				ruleCosts = new CostsBRE();
+				ruleCosts = new CategoryCosts();
 			}
 			costsL.put(country, costsCountryWayL);
 		}
 		return costsL;
 	}
-	
+
 	
 	/*===============================================================================================================================
 	 *  S U P P O R T --  O P E R A T I O N A L 

@@ -11,8 +11,8 @@ import org.springframework.util.Assert;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.lib.common.constants.generic.MetricUnitMeasurement_Constants;
 import com.packsendme.lib.common.constants.way.Roadway_SA_Constants;
-import com.packsendme.roadway.bre.model.vehicle.VehicleBRE;
-import com.packsendme.roadway.bre.model.vehicle.VehicleTypeBRE;
+import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
+import com.packsendme.roadway.bre.model.vehicle.VehicleType;
 
 public class VehicleBRE_CatC_SA {
 	
@@ -23,7 +23,7 @@ public class VehicleBRE_CatC_SA {
 	@Test
 	void getVehicleBRE() throws URISyntaxException, IOException {
 
-		VehicleBRE vehicle_model = getVehicleInstance();
+		VehicleRule vehicle_model = getVehicleInstance();
 		
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonSouthAmerica = mapper.writeValueAsString(vehicle_model);
@@ -31,10 +31,10 @@ public class VehicleBRE_CatC_SA {
    		Assert.notNull(jsonSouthAmerica);
 	}
 	
-	public VehicleBRE getVehicleInstance() {
-		VehicleBRE vehicle_model1 = new VehicleBRE();
+	public VehicleRule getVehicleInstance() {
+		VehicleRule vehicle_model1 = new VehicleRule();
 		List<String> bodyworkL = getBodyWork();
-		vehicle_model1 = new VehicleBRE(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		vehicle_model1 = new VehicleRule(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
 		return vehicle_model1;
 	}
 	
@@ -49,8 +49,8 @@ public class VehicleBRE_CatC_SA {
 	}
 	
 	
-	public VehicleTypeBRE getVehicleType(int type) {
-		VehicleTypeBRE vehicleType = new VehicleTypeBRE();
+	public VehicleType getVehicleType(int type) {
+		VehicleType vehicleType = new VehicleType();
 		
 		if(type == 1) {
 			vehicleType.type_vehicle = Roadway_SA_Constants.ROADWAY_URBANO;

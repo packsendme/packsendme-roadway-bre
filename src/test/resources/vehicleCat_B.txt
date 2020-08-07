@@ -1,6 +1,0 @@
-Car-Sedan
-Car-Hatch
-Motorcycle
-Van
-Furgao
-Van
