@@ -1,4 +1,4 @@
-package com.packsendme.roadway.bre.model.location;
+package com.packsendme.roadway.bre.model.vehicle;
 
 import java.io.Serializable;
 
@@ -7,14 +7,14 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class LocationBRE implements Serializable{
-
+public class BodyworkRule  implements Serializable{
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	public String bodyWork;
+	public String type;
 	
-	public String country_name;
-	public String location_name;
 
 }
