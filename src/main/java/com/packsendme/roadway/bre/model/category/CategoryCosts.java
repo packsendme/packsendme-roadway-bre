@@ -2,8 +2,6 @@ package com.packsendme.roadway.bre.model.category;
 
 import java.io.Serializable;
 
-import com.packsendme.roadway.bre.model.location.Location;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,10 +15,8 @@ public class CategoryCosts implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	// Fixed based cost (weight, distance...)
-	public Location location;
-	public String categoryName;
 	public String vehicleName;
-	
+	public String countryLocation;
 	public Double weight_cost;
 	public Double distance_cost;
 	public Double worktime_cost;
@@ -29,13 +25,11 @@ public class CategoryCosts implements Serializable {
 	public Double rate_exchange;
 	public String current_exchange;
 	
-	public CategoryCosts(Location location, String categoryName, String vehicleName, Double weight_cost,
-			Double distance_cost, Double worktime_cost, Double average_consumption_cost, Double rate_exchange,
-			String current_exchange) {
+	public CategoryCosts(String vehicleName, String countryLocation, Double weight_cost, Double distance_cost,
+			Double worktime_cost, Double average_consumption_cost, Double rate_exchange, String current_exchange) {
 		super();
-		this.location = location;
-		this.categoryName = categoryName;
 		this.vehicleName = vehicleName;
+		this.countryLocation = countryLocation;
 		this.weight_cost = weight_cost;
 		this.distance_cost = distance_cost;
 		this.worktime_cost = worktime_cost;
