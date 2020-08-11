@@ -18,7 +18,7 @@ import com.packsendme.lib.common.constants.way.Roadway_SA_Constants;
 import com.packsendme.roadway.bre.model.category.CategoryCosts;
 import com.packsendme.roadway.bre.model.category.CategoryRule;
 import com.packsendme.roadway.bre.model.category.CategoryType;
-import com.packsendme.roadway.bre.model.location.Location;
+import com.packsendme.roadway.bre.model.location.LocationRule;
 
 public class CategoryBRE_CatC_SA {
 	
@@ -48,9 +48,9 @@ public class CategoryBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	public List<Location> getLocations() {
-		List<Location> locations = new ArrayList<Location>();
-		Location locationObj = new Location("Brazil","","","");
+	public List<LocationRule> getLocations() {
+		List<LocationRule> locations = new ArrayList<LocationRule>();
+		LocationRule locationObj = new LocationRule("Brazil","","","");
 		locations.add(locationObj);
 		return locations;
 	}

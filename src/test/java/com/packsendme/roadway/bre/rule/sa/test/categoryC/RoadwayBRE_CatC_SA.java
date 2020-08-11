@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.roadway.bre.model.businessrule.CategoryBRE;
 import com.packsendme.roadway.bre.model.businessrule.RoadwayBRE;
 import com.packsendme.roadway.bre.model.category.CategoryCosts;
-import com.packsendme.roadway.bre.model.location.Location;
+import com.packsendme.roadway.bre.model.location.LocationRule;
 
 
 public class RoadwayBRE_CatC_SA {
@@ -70,8 +70,8 @@ public class RoadwayBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	public Location getLocation() {
-		Location locationObj = new Location("Brazil","","","");
+	public LocationRule getLocation() {
+		LocationRule locationObj = new LocationRule("Brazil","","","");
 		return locationObj;
 	}
 	
