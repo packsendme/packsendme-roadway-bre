@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter
-public class Location implements Serializable{
+public class LocationRule implements Serializable{
 	
 	/**
 	 * 
@@ -19,7 +19,7 @@ public class Location implements Serializable{
 	public String codCountry;
 	
 	
-	public Location(String countryName, String cityName, String stateName, String codCountry) {
+	public LocationRule(String countryName, String cityName, String stateName, String codCountry) {
 		super();
 		this.countryName = countryName;
 		this.cityName = cityName;
@@ -28,7 +28,7 @@ public class Location implements Serializable{
 	}
 
 
-	public Location() {
+	public LocationRule() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
