@@ -59,18 +59,24 @@ public class VehicleBRE_CatC_SA {
 		return bodywork_vehicleL;
 	}
 	
+	public List<String>  getVehicleType() {
+		List<String> type_vehicleL = new ArrayList<String>();
+		type_vehicleL.add("Automoveis Passeio Carga Ligeira");
+		return type_vehicleL;
+	}
+	
 	
 	public VehicleType getVehicleType(int type) {
 		VehicleType vehicleType = new VehicleType();
 		
 		if(type == 1) {
-			vehicleType.type_vehicle = Roadway_SA_Constants.ROADWAY_URBANO;
+			vehicleType.type_vehicle = "Automoveis Passeio Carga Ligeira";
 		}
 		else if(type == 2) {
-			vehicleType.type_vehicle = Roadway_SA_Constants.ROADWAY_TOCO12;
+			vehicleType.type_vehicle = "Automoveis Transporte Passageiro";
 		} 
 		else if(type == 3) {
-			vehicleType.type_vehicle = Roadway_SA_Constants.ROADWAY_TOCO16;
+			vehicleType.type_vehicle = "Automoveis Transporte Carga Pessada";
 		} 
 		return vehicleType;
 	}

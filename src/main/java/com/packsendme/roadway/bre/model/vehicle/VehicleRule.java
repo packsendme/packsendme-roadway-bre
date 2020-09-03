@@ -16,7 +16,7 @@ public class VehicleRule implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public String vehicle;
+	public String vehicle_type;
 	public List<String> bodywork_vehicle = new ArrayList<String>();
 	public Double cargo_max;
 	public Integer axis_total;
@@ -24,10 +24,10 @@ public class VehicleRule implements Serializable{
 	public Integer people;
 	
 	
-	public VehicleRule(String vehicle, List<String> bodywork_vehicle, Double cargo_max,
+	public VehicleRule(String vehicle_type, List<String> bodywork_vehicle, Double cargo_max,
 			Integer axis_total, String unity_measurement_weight, Integer people) {
 		super();
-		this.vehicle = vehicle;
+		this.vehicle_type = vehicle_type;
 		this.bodywork_vehicle = bodywork_vehicle;
 		this.cargo_max = cargo_max;
 		this.axis_total = axis_total;
