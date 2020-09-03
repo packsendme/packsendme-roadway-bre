@@ -19,6 +19,7 @@ import com.packsendme.roadway.bre.model.category.CategoryCosts;
 import com.packsendme.roadway.bre.model.category.CategoryRule;
 import com.packsendme.roadway.bre.model.category.CategoryType;
 import com.packsendme.roadway.bre.model.location.LocationRule;
+import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
 
 public class CategoryBRE_CatC_SA {
 	
@@ -29,18 +30,28 @@ public class CategoryBRE_CatC_SA {
 	@Test
 	CategoryRule getCategory_C_Rule() throws URISyntaxException, IOException {
 
-		CategoryType categoryType = new CategoryType();
-		categoryType.typeCategory = "Semi-Pesado";
-		
-		CategoryRule categoryBRE = new CategoryRule("Cat_C",categoryType, 3.0, 6.0, 2, 
-				MetricUnitMeasurement_Constants.tonelada_UnitMeasurement,MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 
-				getLocations(), vehicleBRE_CatC.getVehicles(), getCategoryCosts());
+		CategoryRule categoryBRE = new CategoryRule();
+		categoryBRE.categoryType = getCategoryType();
+		categoryBRE.locations = getLocations();
+		categoryBRE.vehicles = vehicleBRE_CatC.getVehicles();
+		categoryBRE.categoryCosts = getCategoryCosts();
 				
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonSouthAmerica = mapper.writeValueAsString(categoryBRE);
 		System.out.println(jsonSouthAmerica);
    		Assert.notNull(jsonSouthAmerica);
    		return categoryBRE;
+	}
+	
+	/*===============================================================================================================================
+	*  CATEGORY - TYPE
+	*===============================================================================================================================
+	*/
+
+	public CategoryType getCategoryType() {
+		CategoryType categoryType = new CategoryType("Cat_C","Transporte Comercio/Varejista", 3.0, 6.0, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement,
+		MetricUnitMeasurement_Constants.tonelada_UnitMeasurement);
+		return categoryType;
 	}
  
  	/*===============================================================================================================================
@@ -66,21 +77,14 @@ public class CategoryBRE_CatC_SA {
 
 		List<String> countryL = getCountry();
 		List<String> wayL = getWay();
+		List<VehicleRule> vehiclesL = vehicleBRE_CatC.getVehicles();
 		Map<String, CategoryCosts> costsCountryWay_Map = new HashMap<String,CategoryCosts>();
 
 		for(String country : countryL) {
-			for(String way : wayL) {
-
-				if(way.equals(Roadway_SA_Constants.ROADWAY_URBANO)) {
-					ruleCosts = new CategoryCosts(Roadway_SA_Constants.ROADWAY_URBANO, "BR", 0.20, 0.30, 0.40, 0.0, 4.50, "R$");
-				}
-				else if(way.equals(Roadway_SA_Constants.ROADWAY_TOCO12)) {
-					ruleCosts = new CategoryCosts(Roadway_SA_Constants.ROADWAY_TOCO12, "BR", 0.20, 0.30, 0.40, 0.0, 4.50, "R$");
-				}
-				else if(way.equals(Roadway_SA_Constants.ROADWAY_TOCO16)) {
-					ruleCosts = new CategoryCosts(Roadway_SA_Constants.ROADWAY_TOCO16, "BR", 0.20, 0.30, 0.40, 0.0, 4.50, "R$");
-				}
-				costsCountryWay_Map.put(way,ruleCosts);
+			
+			for(VehicleRule vehicleObj : vehiclesL) {
+				ruleCosts = new CategoryCosts(vehicleObj.vehicle_type, "BR", 0.20, 0.30, 0.40, 0.0, 4.50, "R$");
+				costsCountryWay_Map.put(vehicleObj.vehicle_type,ruleCosts);
 				ruleCosts = new CategoryCosts();
 			}
 			costsToCountryL.put(country, costsCountryWay_Map);
