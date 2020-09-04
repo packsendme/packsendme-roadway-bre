@@ -38,11 +38,6 @@ public class CategoryCosts implements Serializable {
 		this.current_exchange = current_exchange;
 	}
 
-
-
-
-
-
 	public CategoryCosts() {
 		super();
 		// TODO Auto-generated constructor stub

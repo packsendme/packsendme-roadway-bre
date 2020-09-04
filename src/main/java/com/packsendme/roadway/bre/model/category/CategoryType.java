@@ -32,5 +32,12 @@ public class CategoryType implements Serializable{
 		this.unity_measurement_weight_max = unity_measurement_weight_max;
 	}
 
+	public CategoryType() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
 	
 }
