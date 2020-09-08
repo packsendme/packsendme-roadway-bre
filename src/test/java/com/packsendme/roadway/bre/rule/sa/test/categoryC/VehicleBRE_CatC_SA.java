@@ -33,16 +33,17 @@ public class VehicleBRE_CatC_SA {
 	
 	public VehicleRule getVehicleInstance() {
 		List<String> bodyworkL = getBodyWork();
-		VehicleRule vehicle_model1 = new VehicleRule(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		VehicleRule vehicle_model1 = new VehicleRule(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, 
+				MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, false, "1-5");
 		return vehicle_model1;
 	}
 	
 	public List<VehicleRule> getVehicles() {
 		List<VehicleRule> vehicleL = new ArrayList<VehicleRule>(); 
 		List<String> bodyworkL = getBodyWork();
-		VehicleRule vehicle_model1 = new VehicleRule(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
-		VehicleRule vehicle_model2 = new VehicleRule(getVehicleType(2).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
-		VehicleRule vehicle_model3 = new VehicleRule(getVehicleType(3).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, 0);
+		VehicleRule vehicle_model1 = new VehicleRule(getVehicleType(1).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, false, "1-5");
+		VehicleRule vehicle_model2 = new VehicleRule(getVehicleType(2).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, false, "1-5");
+		VehicleRule vehicle_model3 = new VehicleRule(getVehicleType(3).type_vehicle, bodyworkL, 6.0, 2, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement, false, "1-5");
 		vehicleL.add(vehicle_model1);
 		vehicleL.add(vehicle_model2);
 		vehicleL.add(vehicle_model3);
