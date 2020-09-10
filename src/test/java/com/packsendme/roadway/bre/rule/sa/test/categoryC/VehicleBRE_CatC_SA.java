@@ -59,7 +59,11 @@ public class VehicleBRE_CatC_SA {
 		bodywork_vehicleL.add(Roadway_SA_Constants.BODYWORK_GRADE_BAIXA);
 		return bodywork_vehicleL;
 	}
-	
+
+	/*===============================================================================================================================
+	 *  V E H I C L E -  T Y P E 
+	 *===============================================================================================================================
+	 */
 	public List<String>  getVehicleType() {
 		List<String> type_vehicleL = new ArrayList<String>();
 		type_vehicleL.add("Automoveis Passeio Carga Ligeira");
