@@ -101,6 +101,13 @@
     	<artifactId>modelmapper</artifactId>
     	<version>0.7.4</version>
 	</dependency>
+	
+	<dependency>
+    	<groupId>org.junit.platform</groupId>
+    	<artifactId>junit-platform-launcher</artifactId>
+    	<version>1.5.1</version>
+    	<scope>test</scope>
+	</dependency>
     
   </dependencies>
   

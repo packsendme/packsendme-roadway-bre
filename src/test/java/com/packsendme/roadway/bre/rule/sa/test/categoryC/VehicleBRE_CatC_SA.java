@@ -5,7 +5,6 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,7 +19,7 @@ public class VehicleBRE_CatC_SA {
 	 *  V E H I C L E 
 	 *===============================================================================================================================
 	 */
-	@Test
+	//@Test
 	void getVehicleBRE() throws URISyntaxException, IOException {
 
 		VehicleRule vehicle_model = getVehicleInstance();

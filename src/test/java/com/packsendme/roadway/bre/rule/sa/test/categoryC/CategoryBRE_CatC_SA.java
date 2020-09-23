@@ -9,17 +9,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.lib.common.constants.generic.MetricUnitMeasurement_Constants;
-import com.packsendme.lib.common.constants.way.Roadway_SA_Constants;
+import com.packsendme.roadway.bre.model.businessrule.CategoryBRE;
 import com.packsendme.roadway.bre.model.category.CategoryCosts;
 import com.packsendme.roadway.bre.model.category.CategoryRule;
 import com.packsendme.roadway.bre.model.category.CategoryType;
 import com.packsendme.roadway.bre.model.location.LocationRule;
 import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
+
 
 public class CategoryBRE_CatC_SA {
 	
@@ -28,19 +29,22 @@ public class CategoryBRE_CatC_SA {
 	private String file_way_sa = "src/test/resources/vehicleCat_C.txt";
 
 	@Test
-	CategoryRule getCategory_C_Rule() throws URISyntaxException, IOException {
-
-		CategoryRule categoryBRE = new CategoryRule();
-		categoryBRE.categoryType = getCategoryType();
-		categoryBRE.locations = getLocations();
-		categoryBRE.vehicles = vehicleBRE_CatC.getVehicles();
-		categoryBRE.categoryCosts = getCategoryCosts();
-				
+	public void generateCategory_Testing() throws IOException, URISyntaxException {
+		CategoryBRE categoryBRE = getCategory_C_Rule();
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonSouthAmerica = mapper.writeValueAsString(categoryBRE);
 		System.out.println(jsonSouthAmerica);
    		Assert.notNull(jsonSouthAmerica);
-   		return categoryBRE;
+	}
+	
+	public CategoryBRE getCategory_C_Rule(){
+		CategoryRule categoryRule = new CategoryRule();
+		categoryRule.categoryType = getCategoryType();
+		categoryRule.locations = getLocations();
+		categoryRule.vehicles = vehicleBRE_CatC.getVehicles();
+		categoryRule.categoryCosts = getCategoryCosts();
+		CategoryBRE categoryBRE = new CategoryBRE(categoryRule);
+		return categoryBRE;
 	}
 	
 	/*===============================================================================================================================
@@ -71,25 +75,23 @@ public class CategoryBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	Map<String, Map<String, CategoryCosts>> getCategoryCosts() {
-		CategoryCosts ruleCosts = null;
-		Map<String,Map<String, CategoryCosts>> costsToCountryL = new HashMap<String,Map<String, CategoryCosts>>();
+	Map<String,List<CategoryCosts>> getCategoryCosts() {
+		CategoryCosts ruleCostsObj = null;
+		Map<String,List<CategoryCosts>> cateCostsMap = new HashMap<String,List<CategoryCosts>>();
 
 		List<String> countryL = getCountry();
-		List<String> wayL = getWay();
 		List<VehicleRule> vehiclesL = vehicleBRE_CatC.getVehicles();
-		Map<String, CategoryCosts> costsCountryWay_Map = new HashMap<String,CategoryCosts>();
 
 		for(String country : countryL) {
-			
+			List<CategoryCosts> ruleCostsL = new ArrayList<CategoryCosts>();
 			for(VehicleRule vehicleObj : vehiclesL) {
-				ruleCosts = new CategoryCosts(vehicleObj.vehicle_type, "BR", 0.20, 0.30, 0.40, 0.0, 4.50, "R$");
-				costsCountryWay_Map.put(vehicleObj.vehicle_type,ruleCosts);
-				ruleCosts = new CategoryCosts();
+				ruleCostsObj = new CategoryCosts(country, vehicleObj.vehicle_type, 0.20, 0.30, 0.40, 0.0, 4.50, "R$");
+				ruleCostsL.add(ruleCostsObj);
+				ruleCostsObj = new CategoryCosts();
 			}
-			costsToCountryL.put(country, costsCountryWay_Map);
+			cateCostsMap.put(country, ruleCostsL);
 		}
-		return costsToCountryL;
+		return cateCostsMap;
 	}
 	
 	/*===============================================================================================================================
