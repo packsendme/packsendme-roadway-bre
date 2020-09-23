@@ -6,7 +6,6 @@ import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -33,7 +32,7 @@ public class RoadwayBRE_CatC_SA {
 	*=============================================================================================================================== 
 	*/
 	
-	@Test
+	//@Test
 	void getBusinessRule() throws URISyntaxException, IOException{
 		RoadwayBRE roadwayBRE = new RoadwayBRE();
 	
@@ -59,9 +58,8 @@ public class RoadwayBRE_CatC_SA {
 	 */
 
 	public CategoryBRE getCategory() throws URISyntaxException, IOException {
-		CategoryBRE category = new CategoryBRE();
 		CategoryBRE_CatC_SA catTestC = new CategoryBRE_CatC_SA();
-		category.categoryRule = catTestC.getCategory_C_Rule();
+		CategoryBRE category = catTestC.getCategory_C_Rule();
 		return category;
 	}
 	

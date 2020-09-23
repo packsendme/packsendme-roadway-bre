@@ -24,10 +24,10 @@ public class CategoryRule implements Serializable{
 	public CategoryType categoryType;
 	public List<LocationRule> locations = new ArrayList<LocationRule>();
 	public List<VehicleRule> vehicles = new ArrayList<VehicleRule>() ; 
-	public Map<String,Map<String, CategoryCosts>> categoryCosts = new HashMap<String,Map<String, CategoryCosts>>(); 
+	public Map<String,List<CategoryCosts>> categoryCosts = new HashMap<String,List<CategoryCosts>>(); 
 	
  	public CategoryRule(CategoryType categoryType, List<LocationRule> locations, List<VehicleRule> vehicles,
-			Map<String, Map<String, CategoryCosts>> categoryCosts) {
+ 			Map<String,List<CategoryCosts>> categoryCosts) {
 		super();
 		this.categoryType = categoryType;
 		this.locations = locations;
