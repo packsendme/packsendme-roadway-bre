@@ -21,7 +21,7 @@ public class CategoryRule implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public CategoryType categoryType;
+	public CategoryType categoryType = new CategoryType();
 	public List<LocationRule> locations = new ArrayList<LocationRule>();
 	public List<VehicleRule> vehicles = new ArrayList<VehicleRule>() ; 
 	public Map<String,List<CategoryCosts>> categoryCosts = new HashMap<String,List<CategoryCosts>>(); 
