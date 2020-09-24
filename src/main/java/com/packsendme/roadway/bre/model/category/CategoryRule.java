@@ -24,7 +24,7 @@ public class CategoryRule implements Serializable{
 	public CategoryType categoryType = new CategoryType();
 	public List<LocationRule> locations = new ArrayList<LocationRule>();
 	public List<VehicleRule> vehicles = new ArrayList<VehicleRule>() ; 
-	public Map<String,List<CategoryCosts>> categoryCosts = new HashMap<String,List<CategoryCosts>>(); 
+	public Map<String,List<CategoryCosts>> categoryCosts = new HashMap<>(); 
 	
  	public CategoryRule(CategoryType categoryType, List<LocationRule> locations, List<VehicleRule> vehicles,
  			Map<String,List<CategoryCosts>> categoryCosts) {
