@@ -42,7 +42,7 @@ public class CategoryBRE_CatC_SA {
 		categoryRule.categoryType = getCategoryType();
 		categoryRule.locations = getLocations();
 		categoryRule.vehicles = vehicleBRE_CatC.getVehicles();
-		categoryRule.categoryCosts = getCategoryCosts();
+		//categoryRule.categoryCosts = getCategoryCosts();
 		CategoryBRE categoryBRE = new CategoryBRE(categoryRule);
 		return categoryBRE;
 	}
