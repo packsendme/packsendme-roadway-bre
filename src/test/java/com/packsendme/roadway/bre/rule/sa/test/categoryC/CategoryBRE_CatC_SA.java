@@ -75,10 +75,11 @@ public class CategoryBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	Map<String,List<CategoryCosts>> getCategoryCosts() {
+	List<Map<String,List<CategoryCosts>>> getCategoryCosts() {
 		CategoryCosts ruleCostsObj = null;
 		Map<String,List<CategoryCosts>> cateCostsMap = new HashMap<String,List<CategoryCosts>>();
-
+		List<Map<String,List<CategoryCosts>>> costsListToMap = new ArrayList<Map<String,List<CategoryCosts>>>(); 
+		
 		List<String> countryL = getCountry();
 		List<VehicleRule> vehiclesL = vehicleBRE_CatC.getVehicles();
 
@@ -91,7 +92,8 @@ public class CategoryBRE_CatC_SA {
 			}
 			cateCostsMap.put(country, ruleCostsL);
 		}
-		return cateCostsMap;
+		costsListToMap.add(cateCostsMap);
+		return costsListToMap;
 	}
 	
 	/*===============================================================================================================================
