@@ -19,14 +19,16 @@ public class CategoryRule implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	public String id;
 	public CategoryType categoryType = new CategoryType();
 	public List<LocationRule> locations = new ArrayList<LocationRule>();
 	public List<VehicleRule> vehicles = new ArrayList<VehicleRule>() ; 
 	public List<CategoryCosts> categoryCosts = new ArrayList<CategoryCosts>(); 
 	
- 	public CategoryRule(CategoryType categoryType, List<LocationRule> locations, List<VehicleRule> vehicles,
+ 	public CategoryRule(String id,CategoryType categoryType, List<LocationRule> locations, List<VehicleRule> vehicles,
  			List<CategoryCosts> categoryCosts) {
 		super();
+		this.id = id;
 		this.categoryType = categoryType;
 		this.locations = locations;
 		this.vehicles = vehicles;
