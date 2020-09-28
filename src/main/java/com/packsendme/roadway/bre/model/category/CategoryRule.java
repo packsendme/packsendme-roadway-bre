@@ -2,9 +2,7 @@ package com.packsendme.roadway.bre.model.category;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.packsendme.roadway.bre.model.location.LocationRule;
 import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
@@ -24,11 +22,10 @@ public class CategoryRule implements Serializable{
 	public CategoryType categoryType = new CategoryType();
 	public List<LocationRule> locations = new ArrayList<LocationRule>();
 	public List<VehicleRule> vehicles = new ArrayList<VehicleRule>() ; 
-	//public List<Map<String,List<CategoryCosts>>> categoryCosts = new ArrayList<Map<String,List<CategoryCosts>>>(); 
-	public Map<String,String> categoryCosts = new HashMap<String,String>(); 
+	public List<CategoryCosts> categoryCosts = new ArrayList<CategoryCosts>(); 
 	
  	public CategoryRule(CategoryType categoryType, List<LocationRule> locations, List<VehicleRule> vehicles,
- 			 Map<String,String> categoryCosts ) {
+ 			List<CategoryCosts> categoryCosts) {
 		super();
 		this.categoryType = categoryType;
 		this.locations = locations;
