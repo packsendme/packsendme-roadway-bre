@@ -86,7 +86,7 @@ public class CategoryBRE_CatC_SA {
 		for(String country : countryL) {
 			List<CategoryCosts> ruleCostsL = new ArrayList<CategoryCosts>();
 			for(VehicleRule vehicleObj : vehiclesL) {
-				ruleCostsObj = new CategoryCosts(country, vehicleObj.vehicle_type, 0.20, 0.30, 0.40, 0.0, 4.50, "R$");
+				ruleCostsObj = new CategoryCosts(country, vehicleObj.vehicle_type, 0.20, 0.30, 0.40, 0.0, 4.50, "R$", true);
 				ruleCostsL.add(ruleCostsObj);
 				ruleCostsObj = new CategoryCosts();
 			}
