@@ -4,7 +4,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.util.Assert;
 
@@ -19,7 +21,7 @@ public class RoadwayBRE_CatC_SA {
 
 	private String jsonSouthAmerica = null;
 	private String url_json = "src/test/resources/RoadwayBRE_SA_CatC.json";
-	private final String name_rule = "RoadwayCatC-SouthAmerica-BRE";
+	private final String name_rule = "People";
 
 	// Rule-Costs
 	CategoryCosts ruleCosts = new CategoryCosts();
@@ -40,11 +42,11 @@ public class RoadwayBRE_CatC_SA {
 		String dtNowS = sdf.format(new Date());
 		
 		// RoadwayModel-CATEGORY (C)
-		roadwayBRE.rule_name = name_rule;
+		roadwayBRE.type_bre = name_rule;
  		roadwayBRE.date_creation = dtNowS;
 		roadwayBRE.date_change = null;
 		roadwayBRE.status = "Active";
-		roadwayBRE.category = getCategory();
+		roadwayBRE.categories = getCategory();
 		ObjectMapper mapper = new ObjectMapper();
 		jsonSouthAmerica = mapper.writeValueAsString(roadwayBRE);
 		System.out.println(jsonSouthAmerica);
@@ -57,10 +59,12 @@ public class RoadwayBRE_CatC_SA {
 	 *=============================================================================================================================== 
 	 */
 
-	public CategoryBRE getCategory() throws URISyntaxException, IOException {
+	public List<CategoryBRE> getCategory() throws URISyntaxException, IOException {
 		CategoryBRE_CatC_SA catTestC = new CategoryBRE_CatC_SA();
 		CategoryBRE category = catTestC.getCategory_C_Rule();
-		return category;
+		List<CategoryBRE> categoryL = new ArrayList<CategoryBRE>();
+		categoryL.add(category);
+		return categoryL;
 	}
 	
 	/*===============================================================================================================================
