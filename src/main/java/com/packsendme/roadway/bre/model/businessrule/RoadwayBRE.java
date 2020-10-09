@@ -22,17 +22,23 @@ public class RoadwayBRE implements Serializable {
 	public String date_creation;
 	public String date_change;
 	public List<CategoryRule> categories = new ArrayList<CategoryRule>();
+	public String version;
 	public String status;
 
+ 
+
+
 	public RoadwayBRE(String type_bre, String date_creation, String date_change, List<CategoryRule> categories,
-			String status) {
+			String version, String status) {
 		super();
 		this.type_bre = type_bre;
 		this.date_creation = date_creation;
 		this.date_change = date_change;
 		this.categories = categories;
+		this.version = version;
 		this.status = status;
 	}
+
 
 
 
