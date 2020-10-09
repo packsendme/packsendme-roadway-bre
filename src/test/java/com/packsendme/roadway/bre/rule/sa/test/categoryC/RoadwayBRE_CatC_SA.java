@@ -11,9 +11,9 @@ import java.util.List;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.packsendme.roadway.bre.model.businessrule.CategoryBRE;
 import com.packsendme.roadway.bre.model.businessrule.RoadwayBRE;
 import com.packsendme.roadway.bre.model.category.CategoryCosts;
+import com.packsendme.roadway.bre.model.category.CategoryRule;
 import com.packsendme.roadway.bre.model.location.LocationRule;
 
 
@@ -59,10 +59,10 @@ public class RoadwayBRE_CatC_SA {
 	 *=============================================================================================================================== 
 	 */
 
-	public List<CategoryBRE> getCategory() throws URISyntaxException, IOException {
+	public List<CategoryRule> getCategory() throws URISyntaxException, IOException {
 		CategoryBRE_CatC_SA catTestC = new CategoryBRE_CatC_SA();
-		CategoryBRE category = catTestC.getCategory_C_Rule();
-		List<CategoryBRE> categoryL = new ArrayList<CategoryBRE>();
+		CategoryRule category = catTestC.getCategory_C_Rule();
+		List<CategoryRule> categoryL = new ArrayList<CategoryRule>();
 		categoryL.add(category);
 		return categoryL;
 	}
