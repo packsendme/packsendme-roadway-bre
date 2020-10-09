@@ -14,7 +14,6 @@ import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.lib.common.constants.generic.MetricUnitMeasurement_Constants;
-import com.packsendme.roadway.bre.model.businessrule.CategoryBRE;
 import com.packsendme.roadway.bre.model.category.CategoryCosts;
 import com.packsendme.roadway.bre.model.category.CategoryRule;
 import com.packsendme.roadway.bre.model.category.CategoryType;
@@ -30,21 +29,19 @@ public class CategoryBRE_CatC_SA {
 
 	@Test
 	public void generateCategory_Testing() throws IOException, URISyntaxException {
-		CategoryBRE categoryBRE = getCategory_C_Rule();
+		CategoryRule category = getCategory_C_Rule();
 		ObjectMapper mapper = new ObjectMapper();
-		String jsonSouthAmerica = mapper.writeValueAsString(categoryBRE);
+		String jsonSouthAmerica = mapper.writeValueAsString(category);
 		System.out.println(jsonSouthAmerica);
    		Assert.notNull(jsonSouthAmerica);
 	}
 	
-	public CategoryBRE getCategory_C_Rule(){
+	public CategoryRule getCategory_C_Rule(){
 		CategoryRule categoryRule = new CategoryRule();
 		categoryRule.categoryType = getCategoryType();
 		categoryRule.locations = getLocations();
 		categoryRule.vehicles = vehicleBRE_CatC.getVehicles();
-		//categoryRule.categoryCosts = getCategoryCosts();
-		CategoryBRE categoryBRE = new CategoryBRE(categoryRule);
-		return categoryBRE;
+		return categoryRule;
 	}
 	
 	/*===============================================================================================================================
