@@ -11,9 +11,9 @@ import java.util.List;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.packsendme.roadway.bre.model.businessrule.RoadwayCosts;
 import com.packsendme.roadway.bre.model.businessrule.RoadwayBRE;
-import com.packsendme.roadway.bre.model.category.CategoryCosts;
-import com.packsendme.roadway.bre.model.category.CategoryRule;
+import com.packsendme.roadway.bre.model.category.Category;
 import com.packsendme.roadway.bre.model.location.LocationRule;
 
 
@@ -24,7 +24,7 @@ public class RoadwayBRE_CatC_SA {
 	private final String name_rule = "People";
 
 	// Rule-Costs
-	CategoryCosts ruleCosts = new CategoryCosts();
+	RoadwayCosts ruleCosts = new RoadwayCosts();
 	
 
 	
@@ -42,7 +42,7 @@ public class RoadwayBRE_CatC_SA {
 		String dtNowS = sdf.format(new Date());
 		
 		// RoadwayModel-CATEGORY (C)
-		roadwayBRE.type_bre = name_rule;
+		roadwayBRE.transport = name_rule;
  		roadwayBRE.date_creation = dtNowS;
 		roadwayBRE.date_change = null;
 		roadwayBRE.status = "Active";
@@ -59,10 +59,10 @@ public class RoadwayBRE_CatC_SA {
 	 *=============================================================================================================================== 
 	 */
 
-	public List<CategoryRule> getCategory() throws URISyntaxException, IOException {
+	public List<Category> getCategory() throws URISyntaxException, IOException {
 		CategoryBRE_CatC_SA catTestC = new CategoryBRE_CatC_SA();
-		CategoryRule category = catTestC.getCategory_C_Rule();
-		List<CategoryRule> categoryL = new ArrayList<CategoryRule>();
+		Category category = catTestC.getCategory_C_Rule();
+		List<Category> categoryL = new ArrayList<Category>();
 		categoryL.add(category);
 		return categoryL;
 	}
