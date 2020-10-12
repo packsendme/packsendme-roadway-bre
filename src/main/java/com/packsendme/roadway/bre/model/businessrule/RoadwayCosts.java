@@ -1,4 +1,4 @@
-package com.packsendme.roadway.bre.model.category;
+package com.packsendme.roadway.bre.model.businessrule;
 
 import java.io.Serializable;
 
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
-public class CategoryCosts implements Serializable {
+public class RoadwayCosts implements Serializable {
 	
 	/**
 	 * 
@@ -26,7 +26,7 @@ public class CategoryCosts implements Serializable {
 	public Boolean statusChange;
 
 	
-	public CategoryCosts(String countryName, String vehicle, Double weight_cost, Double distance_cost,
+	public RoadwayCosts(String countryName, String vehicle, Double weight_cost, Double distance_cost,
 			Double worktime_cost, Double average_consumption_cost, Double rate_exchange, 
 			String current_exchange, Boolean statusChange) {
 		super();
@@ -41,12 +41,7 @@ public class CategoryCosts implements Serializable {
 		this.statusChange = statusChange;
 	}
 
-
-
-
-
-
-	public CategoryCosts() {
+	public RoadwayCosts() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

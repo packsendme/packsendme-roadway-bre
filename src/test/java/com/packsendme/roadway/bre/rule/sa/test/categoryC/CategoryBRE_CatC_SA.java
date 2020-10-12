@@ -14,9 +14,8 @@ import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.lib.common.constants.generic.MetricUnitMeasurement_Constants;
-import com.packsendme.roadway.bre.model.category.CategoryCosts;
-import com.packsendme.roadway.bre.model.category.CategoryRule;
-import com.packsendme.roadway.bre.model.category.CategoryType;
+import com.packsendme.roadway.bre.model.businessrule.RoadwayCosts;
+import com.packsendme.roadway.bre.model.category.Category;
 import com.packsendme.roadway.bre.model.location.LocationRule;
 import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
 
@@ -29,32 +28,25 @@ public class CategoryBRE_CatC_SA {
 
 	@Test
 	public void generateCategory_Testing() throws IOException, URISyntaxException {
-		CategoryRule category = getCategory_C_Rule();
+		Category category = getCategory_C_Rule();
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonSouthAmerica = mapper.writeValueAsString(category);
 		System.out.println(jsonSouthAmerica);
    		Assert.notNull(jsonSouthAmerica);
 	}
 	
-	public CategoryRule getCategory_C_Rule(){
-		CategoryRule categoryRule = new CategoryRule();
-		categoryRule.categoryType = getCategoryType();
-		categoryRule.locations = getLocations();
+	public Category getCategory_C_Rule(){
+		Category categoryRule = new Category();
+		categoryRule.name_category = "Cat_A";
+		categoryRule.transport = "People";
+		categoryRule.weight_min = 3.0;
+		categoryRule.weight_max = 3.0;
+		categoryRule.unity_measurement_weight_max = MetricUnitMeasurement_Constants.tonelada_UnitMeasurement;
+		categoryRule.unity_measurement_weight_min = MetricUnitMeasurement_Constants.tonelada_UnitMeasurement;
 		categoryRule.vehicles = vehicleBRE_CatC.getVehicles();
 		return categoryRule;
 	}
 	
-	/*===============================================================================================================================
-	*  CATEGORY - TYPE
-	*===============================================================================================================================
-	*/
-
-	public CategoryType getCategoryType() {
-		CategoryType categoryType = new CategoryType("Cat_C","Transporte Comercio/Varejista", 3.0, 6.0, MetricUnitMeasurement_Constants.tonelada_UnitMeasurement,
-		MetricUnitMeasurement_Constants.tonelada_UnitMeasurement);
-		return categoryType;
-	}
- 
  	/*===============================================================================================================================
 	 *  LOCATION
 	 *===============================================================================================================================
@@ -72,20 +64,20 @@ public class CategoryBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	List<Map<String,List<CategoryCosts>>> getCategoryCosts() {
-		CategoryCosts ruleCostsObj = null;
-		Map<String,List<CategoryCosts>> cateCostsMap = new HashMap<String,List<CategoryCosts>>();
-		List<Map<String,List<CategoryCosts>>> costsListToMap = new ArrayList<Map<String,List<CategoryCosts>>>(); 
+	List<Map<String,List<RoadwayCosts>>> getCategoryCosts() {
+		RoadwayCosts ruleCostsObj = null;
+		Map<String,List<RoadwayCosts>> cateCostsMap = new HashMap<String,List<RoadwayCosts>>();
+		List<Map<String,List<RoadwayCosts>>> costsListToMap = new ArrayList<Map<String,List<RoadwayCosts>>>(); 
 		
 		List<String> countryL = getCountry();
 		List<VehicleRule> vehiclesL = vehicleBRE_CatC.getVehicles();
 
 		for(String country : countryL) {
-			List<CategoryCosts> ruleCostsL = new ArrayList<CategoryCosts>();
+			List<RoadwayCosts> ruleCostsL = new ArrayList<RoadwayCosts>();
 			for(VehicleRule vehicleObj : vehiclesL) {
-				ruleCostsObj = new CategoryCosts(country, vehicleObj.vehicle_type, 0.20, 0.30, 0.40, 0.0, 4.50, "R$", true);
+				ruleCostsObj = new RoadwayCosts(country, vehicleObj.vehicle_type, 0.20, 0.30, 0.40, 0.0, 4.50, "R$", true);
 				ruleCostsL.add(ruleCostsObj);
-				ruleCostsObj = new CategoryCosts();
+				ruleCostsObj = new RoadwayCosts();
 			}
 			cateCostsMap.put(country, ruleCostsL);
 		}
