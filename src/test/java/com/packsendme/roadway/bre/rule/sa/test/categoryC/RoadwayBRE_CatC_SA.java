@@ -11,10 +11,10 @@ import java.util.List;
 import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.packsendme.roadway.bre.model.businessrule.RoadwayCosts;
 import com.packsendme.roadway.bre.model.businessrule.RoadwayBRE;
+import com.packsendme.roadway.bre.model.businessrule.RoadwayCosts;
 import com.packsendme.roadway.bre.model.category.Category;
-import com.packsendme.roadway.bre.model.location.LocationRule;
+import com.packsendme.roadway.bre.model.location.Location;
 
 
 public class RoadwayBRE_CatC_SA {
@@ -72,8 +72,8 @@ public class RoadwayBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	public LocationRule getLocation() {
-		LocationRule locationObj = new LocationRule("Brazil","","","");
+	public Location getLocation() {
+		Location locationObj = new Location("Brazil","","","");
 		return locationObj;
 	}
 	
