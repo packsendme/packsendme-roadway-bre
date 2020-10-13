@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.packsendme.lib.common.constants.generic.MetricUnitMeasurement_Constants;
 import com.packsendme.roadway.bre.model.businessrule.RoadwayCosts;
 import com.packsendme.roadway.bre.model.category.Category;
-import com.packsendme.roadway.bre.model.location.LocationRule;
+import com.packsendme.roadway.bre.model.location.Location;
 import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
 
 
@@ -52,9 +52,9 @@ public class CategoryBRE_CatC_SA {
 	 *===============================================================================================================================
 	 */
 	
-	public List<LocationRule> getLocations() {
-		List<LocationRule> locations = new ArrayList<LocationRule>();
-		LocationRule locationObj = new LocationRule("Brazil","","","");
+	public List<Location> getLocations() {
+		List<Location> locations = new ArrayList<Location>();
+		Location locationObj = new Location("Brazil","","","");
 		locations.add(locationObj);
 		return locations;
 	}

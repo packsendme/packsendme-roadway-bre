@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.packsendme.roadway.bre.model.category.Category;
+import com.packsendme.roadway.bre.model.location.Location;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,20 +25,26 @@ public class RoadwayBRE implements Serializable {
 	public String date_change;
 	public List<Category> categories = new ArrayList<Category>();
 	public List<RoadwayCosts> costs = new ArrayList<RoadwayCosts>();
+	public List<Location> locations = new ArrayList<Location>();
 	public String version;
 	public String status;
 
- 	public RoadwayBRE(String transport, String date_creation, String date_change, List<Category> categories,
-			List<RoadwayCosts> costs, String version, String status) {
+ 
+
+	public RoadwayBRE(String transport, String date_creation, String date_change, List<Category> categories,
+			List<RoadwayCosts> costs, List<Location> locations, String version, String status) {
 		super();
 		this.transport = transport;
 		this.date_creation = date_creation;
 		this.date_change = date_change;
 		this.categories = categories;
 		this.costs = costs;
+		this.locations = locations;
 		this.version = version;
 		this.status = status;
 	}
+
+
 
 	public RoadwayBRE() {
 		super();
