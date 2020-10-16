@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter 
 @Setter 
 public class Initials implements Serializable{
-
+ 
 	/**
 	 * 
 	 */
@@ -19,6 +19,11 @@ public class Initials implements Serializable{
 	public Initials(String name) {
 		super();
 		this.name = name;
+	}
+
+	public Initials() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 
