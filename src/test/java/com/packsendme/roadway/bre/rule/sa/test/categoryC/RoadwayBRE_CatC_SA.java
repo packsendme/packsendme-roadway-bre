@@ -43,7 +43,7 @@ public class RoadwayBRE_CatC_SA {
 		
 		// RoadwayModel-CATEGORY (C)
 		roadwayBRE.transport = name_rule;
- 		roadwayBRE.date_creation = new Date();
+ 		roadwayBRE.date_creation = null;
 		roadwayBRE.date_change = null;
 		roadwayBRE.status = "Active";
 		roadwayBRE.categories = getCategory();
