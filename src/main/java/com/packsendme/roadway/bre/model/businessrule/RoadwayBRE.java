@@ -23,15 +23,15 @@ public class RoadwayBRE implements Serializable {
 	public String id;
 	public String name_bre;
 	public String transport;
-	public String date_creation;
-	public String date_change;
+	public Date date_creation;
+	public Date date_change;
 	public List<Category> categories = new ArrayList<Category>();
 	public List<RoadwayCosts> costs = new ArrayList<RoadwayCosts>();
 	public List<Location> locations = new ArrayList<Location>();
 	public String version;
 	public String status;
 
-	public RoadwayBRE(String name_bre, String transport, String date_creation, String date_change,
+	public RoadwayBRE(String name_bre, String transport, Date date_creation, Date date_change,
 			List<Category> categories, List<RoadwayCosts> costs, List<Location> locations, String version,
 			String status) {
 		super();
