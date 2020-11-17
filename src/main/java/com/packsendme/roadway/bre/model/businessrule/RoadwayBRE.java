@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.packsendme.roadway.bre.model.category.Category;
 import com.packsendme.roadway.bre.model.location.Location;
 
@@ -13,6 +15,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
+@Document(collection = "pcks_roadbrewa_roadway")
 public class RoadwayBRE implements Serializable {
 	
 	/**

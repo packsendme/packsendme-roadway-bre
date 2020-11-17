@@ -2,11 +2,14 @@ package com.packsendme.roadway.bre.model.transport;
 
 import java.io.Serializable;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter 
-@Setter 
+@Setter
+@Document(collection = "pcks_roadbrewa_transport")
 public class Transport implements Serializable{
 
 	/**

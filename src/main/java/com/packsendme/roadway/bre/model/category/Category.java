@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.packsendme.roadway.bre.model.vehicle.VehicleRule;
 
 import lombok.Getter;
@@ -11,6 +13,7 @@ import lombok.Setter;
 
 @Getter 
 @Setter 
+@Document(collection = "pcks_roadbrewa_category")
 public class Category implements Serializable{
 
 	/**

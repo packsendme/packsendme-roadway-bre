@@ -4,11 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter 
 @Setter 
+@Document(collection = "pcks_roadbrewa_vehicle")
 public class VehicleRule implements Serializable{
 
 	/**
